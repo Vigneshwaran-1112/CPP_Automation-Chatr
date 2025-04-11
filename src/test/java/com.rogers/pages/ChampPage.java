@@ -25,7 +25,7 @@ public class ChampPage extends BasePage {
     WebElement nextButton;
     @FindBy(xpath = "//input[@name='passwd']")
     WebElement passwordInput;
-    @FindAll({@FindBy(xpath = "//button[@id='idSIButton9']"),@FindBy(xpath = "//input[@value='Sign in']")})
+    @FindAll({@FindBy(xpath = "//button[@id='idSIButton9']"),@FindBy(xpath = "//input[@value='Sign in']"),@FindBy(xpath="//button[contains(text(),\"Sign in\")]")})
     WebElement submitButton;
     @FindAll({@FindBy(xpath = "//button[@id='declineButton']"),@FindBy(xpath = "//*[@id=\"idBtn_Back\"]")}) //button[@id='declineButton'] OR //*[@id="idBtn_Back"]
     WebElement noButton;

@@ -321,11 +321,19 @@ public class CP_HomePage extends BasePage {
         scrollToMiddleOfElement(searchButton);
         searchButton.click();
         authenticatebtn.click();
-        getReusableActions().staticWait(2000);
+        getReusableActions().staticWait(4000);
         getReusableActions().isElementVisible(dateOfBirth, 20);
-      //  dateOfBirth.clear();
         dateOfBirth.sendKeys("01/01");
-        submitButton.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        WebElement element = getDriver().findElement(By.xpath("//p[contains(text(),'Authenticate')]"));
+        element.click();
+        getReusableActions().clickWhenVisible(submitBtn,10);
+
+
 
 
 

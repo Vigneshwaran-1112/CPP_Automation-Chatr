@@ -321,6 +321,18 @@ public class SimPage extends BasePage {
         //reporter.reportLogWithScreenshot("Profile details are populated");
         reporterSnapshot(firstNameInput,"Profile Details","","NULL");
     }
+    public void setProfileDetails(String firstName, String lastName, String email, String dateOfBirth) {
+        getReusableActions().isElementVisible(firstNameInput, 10);
+        getReusableActions().javascriptScrollByVisibleElement(firstNameInput);
+        firstNameInput.sendKeys(firstName);
+        lastNameInput.sendKeys(lastName);
+        emailInput.sendKeys(email);
+        dateOfBirthInput.click();
+        dateOfBirthInput.sendKeys(dateOfBirth);
+        altPhoneNumberInput.click();
+        //reporter.reportLogWithScreenshot("Profile details are populated");
+        reporterSnapshot(firstNameInput,"Profile Details","","NULL");
+    }
 
     public void setProfileDetailsPortIn(String firstName, String lastName, String email, String dateOfBirth, String altPhoneNumber) {
         getReusableActions().isElementVisible(firstNameInput, 10);
