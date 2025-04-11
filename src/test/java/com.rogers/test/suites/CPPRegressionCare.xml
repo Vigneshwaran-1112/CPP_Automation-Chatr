@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="CPPRegressionCare" preserve-order="true" parallel="false" thread-count="2">
+    <listeners>
+        <listener class-name="com.rogers.test.listeners.AnnotationTransformer"/>
+<!--       <listener class-name="com.chatr.listeners.AnnotationTransformer"/>-->
+        <listener class-name="extentreport.ExtentListener"/>
+    </listeners>
+        <test name="CPPRegressionCare">
+<!--            <method-selectors>-->
+<!--                <method-selector>-->
+<!--                    <script language-->
+<!--                                    ="beanshell"><![CDATA[-->
+<!--                            groups.containsKey("DASH")&&groups.containsKey("P1")-->
+<!--                            ||groups.containsKey("MAO")&&groups.containsKey("P1")-->
+<!--                            ||groups.containsKey("HR")&&groups.containsKey("P1")-->
+<!--                            ||groups.containsKey("CS")&&groups.containsKey("P1")-->
+<!--                            ||groups.containsKey("PPC")&&groups.containsKey("P1")-->
+<!--                            ||groups.containsKey("NAC")&&groups.containsKey("P1")]]></script>-->
+<!--                </method-selector>-->
+<!--            </method-selectors>-->
+<!--            <packages>-->
+<!--                <package name="com.rogers.test.tests.desktop.customerCare"/>-->
+<!--                <package name="com.rogers.test.tests.desktop.selfServe"/>-->
+<!--            </packages>-->
+            <classes>
+
+                <class name="com.rogers.test.tests.desktop.selfServe.HistoryReports_Test">
+                    <methods>
+                        <include name="CPP_26227_Validate_applyCancelCrossMark_StatusChannelFilters"/>
+                        <include name="CPP_24841_ValidateCustomer_selected_DisabledDate"/>
+                        <include name="CPP_35089_Validate_error_message_for_Date_Range_greater_than_90days"/>
+                        <include name="CPP_35090_Validate_ToDateIsLessThanFromDate_PaymentHistoryPage"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.selfServe.HistoryReports_Test1">
+                    <methods>
+                        <include name="CPP_24868_ValidateFiltersOrderHistoryPage"/>
+                        <include name="CPP_37292_Validate_Save_Usage_History_Report"/>
+                        <include name="CPP_37335_validate_Usage_History_7days_Filter_And_Report_Display"/>
+                        <include name="CPP_37675_validate_Usage_history_report_filtered_Past7days_Filter_Get_Selectedby_Default"/>
+                        <include name="CPP_37676_Validate_From_to_date_filter_logic_in_the_Usage_history_report_tab_AC2"/>
+                        <include name="CPP_37685_Validate_The_Change_Sorting_By_Account_Balance_On_Usage_History_Report_Page"/>
+                        <include name="CPP_37686_Validate_The_Change_Sorting_By_Call_Type_On_Usage_History_Report_Page"/>
+
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.customerCare.CP_CareFlows_Report">
+                    <methods>
+                        <include name="CPP_31215_Validate_Error_message_when_report_exceeds_max_records_limit"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.customerCare.CP_CareFlows_Report">
+                    <methods>
+                        <include name="CPP_31173_Validate_Care_Agent_Able_To_See_Order_Details_For_Order_Type_New_Activation_With_Port_In"/>
+                        <include name="CPP_42581_Validate_Navigate_through_pagination"/>
+                        <include name="CPP_31234_Validate_Order_history_filtered_on_date_filters_past_7_days"/>
+                        <include name="CPP_31294_Validate_Care_Agent_View_SIM_Swap_Order_Type_Details_In_Order_Section"/>
+                        <include name="CPP_33490_Validate_Care_Agent_View_TNC_Order_Type_Details_In_Order_Section"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.customerCare.RP_CustomerValidationVoucher">
+                    <methods>
+                        <include name="CPP_45188_Retail_Agent_Role_permissions"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.customerCare.RP_CustomerValidation">
+                    <methods>
+                        <include name="CPP_42577_Validate_Initiate_Manage_Addon_flow_from_Account_management_Account_Expired"/>
+                        <include name="CPP_29335_Validate_entered_value_is_in_the_system"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.customerCare.CP_CustomerValidation">
+                    <methods>
+                        <include name="CPP_34208_Care_agent_can_search_customer_with_search_criteria_other_than_CTN_Wildcard_search"/>
+                        <include name="CPP_34210_Care_agent_can_search_customer_with_Last_Name_and_Postal_Code"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.selfServe.AccountManagement_Test">
+                    <methods>
+                        <include name="CPP_37295_Submit_MAO_order_TnC_not_Checked_AC_3"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.selfServe.AccountManagementVoucher_Test">
+                    <methods>
+                        <include name="CPP_37521_SS_Validate_in_MAO_Top_up_card_PIN_format_is_incorrect"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.selfServe.AuthenticatedTopUp_TEST">
+                    <methods>
+                        <include name="CPP_34802_Validate_Successful_Log_in_EAS_validates_then_back_to_CPP_when_accepted"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.selfServe.PPCTest">
+                    <methods>
+                        <include name="CPP_37515_Validate_ManageAddOnsFlow_WithVoucherInsufficientBalance"/>
+                        <include name="CPP_37506_Validating_MAO_payment_page_when_Account_Balance_is_not_Sufficient_User_doesnt_select_a_top_up_your_account_options_and_clicks_Proceed"/>
+                    </methods>
+                </class>
+
+                <!-- FIRST RUN BENDING BELOW-->
+                <class name="com.rogers.test.tests.desktop.customerCare.CP_CareFlows">
+                    <methods>
+                        <include name="CPP_45298_Validate_Care_MAO_Flow_Voucher_InCorrect3Times_Select_CC"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.customerCare.CP_DashBoardValidation">
+                    <methods>
+                        <include name="CPP_24738_validate_Unendrollment_date_with_Static_Label_and_MM_DD_YY_Format_and_Enrollment_Option"/>
+                    </methods>
+                </class>
+
+
+
+         <!--       <class name="com.rogers.test.tests.desktop.customerCare.CP_PortInValidation">
+                    <methods>
+                        <include name="CPP_31165_Telephone_Number_change_New_number_error_different_province"/>
+                        <include name="CPP_31221_Validation_of_the_new_selected_number_step_of_TNC_flow"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.customerCare.RP_CustomerValidation">
+                    <methods>
+                        <include name="CPP_47547_Validate_That_Chargeable_Transaction_CTA_Is_Hidden_After_Successful_TopUp"/>
+                        <include name="CPP_45399_Retail_agent_validating_payment_summary_for_credit_card"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.customerCare.CP_DashBoardValidation">
+                    <methods>
+                        <include name="CPP_33054_Validating_display_alternate_CTN"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.customerCare.CP_CareFlows">
+                    <methods>
+                        <include name="CPP_45363_Validating_RBA_Credit_Card_Functionality_For_Care_topup_flow_when_user_has_atleast_One_CC"/>
+                        <include name="CPP_37210_Revalidate_the_card"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.customerCare.RP_CustomerValidationVoucher">
+                    <methods>
+                        <include name="CPP_42420_Validate_Display_X_to_Cancel_Topup_card_PIN_AC5_1"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.customerCare.CP_CustomerValidation">
+                    <methods>
+                        <include name="CPP_45271_Retail_Agent_do_Top_up_amount_exceeds_the_account_balance_limit"/>
+                        <include name="CPP_35012_Care_Validate_Voucher_not_valid_for_payment"/>
+                        <include name="CPP_45266_Retail_Agent_Trying_to_use_top_up_card_payment_method_within_24_hours_when_customer_is_barred"/>
+                        <include name="CPP_45421_Care_Agent_submits_the_Refund_Transaction_AC_13"/> &lt;!&ndash;LESS THAN ACC BALANCE&ndash;&gt;
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.selfServe.UnAuthenticated_TopUpVoucher_Test">
+                    <methods>
+                        <include name="CPP_29105_validate_Unauthenticated_topUp_checkBoxNotChecked_paymentSummaryPage"/>
+                        <include name="CPP_27643_validate_AutoSuggestion_Field_For_AddressLine"/>
+                        <include name="CPP_27651_validate_Autocomplete_Billing_Address"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.selfServe.UnAuthenticated_TopUp_Test">
+                    <methods>
+                        <include name="CPP_28943_validate_Unauthenticated_topUp_SuccessMessage"/>
+                        <include name="CPP_26185_Validate_Cancel_Than_again_proceed_UnauthenticatedTopUp"/>
+                    </methods>
+                </class>-->
+
+
+            <!--    <class name="com.rogers.test.tests.desktop.selfServe.HistoryReports_Test1">
+                    <methods>
+                        <include name="CPP_37292_Validate_Save_Usage_History_Report"/>
+                        <include name="CPP_37676_Validate_From_to_date_filter_logic_in_the_Usage_history_report_tab_AC2"/>
+                        <include name="CPP_37292_Validate_Save_Usage_History_Report"/>
+                        <include name="CPP_37685_Validate_The_Change_Sorting_By_Account_Balance_On_Usage_History_Report_Page"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.selfServe.HistoryReports_Test">
+                    <methods>
+                        <include name="CPP_42498_Retail_Agent_Able_To_Search_Customer_Records"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.customerCare.CP_CareFlows_Report">
+                    <methods>
+                        <include name="CPP_31240_validate_agent_click_on_apply_filter_button_on_the_modal_window"/>
+                        &lt;!&ndash;<include name="CPP_45003_Validate_From_To_filter_logic_on_Targeted_offers_on_Targeted_offer_history_reports"/>&ndash;&gt;
+                        <include name="CPP_24987_ValidateCustomer_selects90DaysRange_amongAvailableFilters"/>
+                    </methods>
+                </class>-->
+
+
+
+
+
+
+                     <!--Sanity Test case-->
+               <!-- <class name="com.rogers.test.tests.desktop.customerCare.RP_CustomerValidation">
+                    <methods>
+                        <include name="CPP_42374_Retail_Agent_Able_To_Submit_Order_Sufficient_Balance"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.selfServe.NAC_CreditCard_Flow_Test">
+                    <methods>
+                        <include name="CPP_54706_Validate_NAC_Flow_Ontario_Tax_validation"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.selfServe.NAC_Voucher_Flow_Test">
+                    <methods>
+                        <include name="CPP_34890_Validate_SuccessfulNacWithVoucher"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.selfServe.PPCTest">
+                    <methods>
+                        <include name="CPP_29140_Validate_E2E_PPC_Flow_UpGrade_Lower_Value"/>
+                        <include name="CPP_30906_Validate_enroll_in_Autopay_while_doing_PPC_flow_If_the_customer_has_no_saved_Credit_cards_on_file"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.selfServe.AccountManagement_Test">
+                    <methods>
+                        <include name="CPP_38939_Validate_Autopay_UnEnrollment_Flow"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.selfServe.EnrollPayment_Test">
+                    <methods>
+                        <include name="CPP_33309_Validate_User_Submit_Autopay_Enrollment_With_Selected_Terms_Conditions_Checkbox"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.selfServe.UnAuthenticated_TopUpVoucher_Test">
+                    <methods>
+                        <include name="CPP_37140_TC2_Validate_Successful_topup_Voucher"/>
+                    </methods>
+                </class>
+                <class name="com.rogers.test.tests.desktop.selfServe.AuthenticatedTopUp_TEST">
+                    <methods>
+                        <include name="CPP_26951_Validate_Topup_Payment_Saved_Credit_Card"/>
+                    </methods>
+                </class>-->
+            </classes>
+    </test>
+</suite>

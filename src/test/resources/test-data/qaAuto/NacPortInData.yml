@@ -1,0 +1,32 @@
+#NAC Port In flow Data
+nacPortInData:
+- province: 'ON'
+  city:  'Toronto'  #'Brantford'
+  country : 'Canada'
+  planTab : '3G Nation-Wide Talk, Text & Data'
+  planValue: '70'
+  cardNumber: '4545157625538881'
+  cvv: '123'
+  expiryDate: '12/25'
+  topUp: '1'
+  provinceFullName: 'Ontario'
+  firstName: 'Auto'
+  lastName: 'Test'
+  email: 'ramanujam.arunachala@rci.rogers.com'
+  dateOfBirth: '01/01/2000'
+  altPhoneNumber: '012-345-6789'
+  oldReseller: 'Cable Cable'
+  postalCode: 'M4B 2J8'
+  nacPortInPhoneNo: '416-921-1239' # TC-24879
+  nacPortInErrorMsgPhoneNo: '416-921-1234'
+  nacPortInBellPhoneNo: '437-326' # 514-942' # TC-24850, TC-29299
+  nacPortInTelusPhoneNo: '289-233' # TC-29300
+  nacPortInSaskPhoneNo: '306-201' # TC-29305
+  nacPortInFidoPhoneNo: '416-838' # TC-29298
+  nacPortInRogersPhoneNo: '437-880' # TC-29297
+  nacPortInFreedomPhoneNo: '437-410' # TC-29310
+  nacPortInSerial: '514-942'
+  nacPortInNumber: '416-921'
+  nacPortInWireless: '416-729' # Wireless XYZ range
+- city: 'Prince George' # TC - 27681
+  province: 'BC'

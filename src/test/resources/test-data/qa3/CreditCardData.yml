@@ -1,0 +1,5 @@
+#creditcard data
+creditCardData:
+  - cardNumber : '4545157625538881'
+    cvv : '123'
+    expiryDate : '12/23'

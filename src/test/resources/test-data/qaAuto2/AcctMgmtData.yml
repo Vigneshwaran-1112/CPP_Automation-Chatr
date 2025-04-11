@@ -1,0 +1,46 @@
+#Account Management flow Data
+acctMgmtData:
+  # Unsaved Credit Card Login
+- username: 'june2024191415@rci.rogers.com'
+  password: 'Rogers123'
+  planTab: '3G Nation-Wide Talk, Text & Data'
+  planValue: '60'
+  topUp: '1'
+  cardNumber: '4545157625538881'
+  cvv: '123'
+  expiryDate: '12/25'
+  provinceFullName: 'Ontario'
+  city: 'Toronto'
+  dateOfBirth: '01/01/2000'
+  postalCode: 'M4B 2J8'
+  usedVoucherPIN: '680364674103' #391794498733
+  phoneNumber: '4163191346' # CTN List for EAS Register
+  eas : '7825328741'
+  # valid $10 voucher
+  voucher10: '693467535059'
+  # valid $30 voucher
+  voucher30: '693467535059'
+  # valid $70 voucher
+  voucher70: '396534024511;693467535059;267569986431;955407832775;203274807709'
+  # valid $100 voucher
+  voucher100: '462351416744;803998484069;219503190542;910456053814'
+  firstName: 'Manohar'
+  lastName: 'Batchu'
+  # Saved Credit Card Login
+- username: 'august2024011302@rci.rogers.com'
+  password: 'rogers123'
+  # In Flight / Pending Login
+- username: 'febchatr40@automation.com' # TC - 37402
+  password: 'Rogers123'
+  # Expiry Account Login
+- username: 'may2024281554@rci.rogers.com' # TC - 37403, 37344
+  password: 'Rogers123'
+  # Blocked Account Login
+- username: 'febchatr40@automation.com' # TC - 37277
+  password: 'Rogers123'
+  # More $ 300 Add-in Need to add. Required more Add-In
+- username: 'febchatr40@automation.com' # TC - 37387
+  password: 'Rogers123'
+  # Auto Pay Enrolled
+- username: 'maychatr935@automation.com' # TC - 37387
+  password: 'Rogers123'

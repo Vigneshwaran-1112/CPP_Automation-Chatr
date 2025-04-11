@@ -1,0 +1,6 @@
+# Register Page flow Data
+registerData:
+- postalCode: 'M4B 2J8'
+  phoneNumber: '416-817-6071'
+  usedPhoneNumber: '416-319-2606'
+  code: '123456'

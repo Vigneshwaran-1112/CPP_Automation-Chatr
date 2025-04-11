@@ -1,0 +1,14 @@
+# Search Items
+searchItem : iPAD
+
+#Related Search Results
+relatedSearchOneExpected : https://www.rogers.com/customer/small-business/search?searchTerm=The%20Wireless%20Code
+relatedSearchTwoExpected : https://www.rogers.com/customer/small-business/search?searchTerm=Tips%20to%20manage%20your%20wireless%20data%20usage
+relatedSearchThreeExpected : https://www.rogers.com/customer/small-business/search?searchTerm=The%20Wireless%20Code%20%7C%20Rogers%20Small%20Business  
+
+#Quick Links Results
+quickLinkOneExpected : https://www.rogers.com/customer/small-business/support/article/the-wireless-code
+quickLinkTwoExpected : https://www.rogers.com/customer/small-business/support/article/smb-tips-to-manage-your-wireless-data-usage
+
+
+

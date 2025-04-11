@@ -1,0 +1,198 @@
+
+internetServicesPage: Home>Internet Services
+businessInternetPage: Home>Internet Services>Business Internet
+dedicatedInternetPage: Home>Internet Services>Dedicated Internet
+
+internetServicesPageMobile: Back to Homepage
+businessInternetPageMobile: Back to Internet Services
+dedicatedInternetPageMobile: Back to Internet Services 
+
+
+internetServicesPageFR: Accueil>Services Internet
+businessInternetPageFR: Accueil>Services Internet>Internet Affaires
+dedicatedInternetPageFR: Accueil>Services Internet>Internet spécialisé
+
+internetServicesPageMobileFR: Retour à la page d’accueil
+businessInternetPageMobileFR: Retour à la page Services Internet 
+dedicatedInternetPageMobileFR: Retour à la page Services Internet 
+
+wirelessForBusinessPage: Home>Wireless plans & devices
+wirelessForBusinessPageFR: Accueil>Forfaits sans-fil et appareils
+businessWirelessPlans: Home>Wireless Plans & Devices>Business Wireless Plans
+businessWirelessPlansFR: Accueil>Forfaits sans-fil et appareils>Forfaits sans-fil Affaires
+
+wirelessForBusinessPageMobile: Back to Homepage
+wirelessForBusinessPageMobileFR: Retour à la page d’accueil
+businessWirelessPlansMobile: Back to Wireless Plans & Devices
+businessWirelessPlansMobileFR: Retour à Forfaits sans-fil et appareils
+
+# Cloud Services Page
+cloudServicesPage : Home>Data centre & cloud solutions>Cloud Services
+cloudServicesPageFR : Accueil>Centres de données et solutions en nuage>Services en nuage
+cloudServicesPageMobile : Back to Data centre & cloud solutions
+cloudServicesPageMobileFR : Retourner à Centre de données et services en nuage
+
+# Data Centre & Cloud  Page
+dataCentreCloudPage : Home>Data centre & cloud solutions
+dataCentreCloudPageFR : Page d’accueil>Centres de données et solutions en nuage
+dataCentreCloudPageMobile : Back to Homepage
+dataCentreCloudPageMobileFR : Retour à la page d’accueil
+
+# Travel and Roaming page
+travelAndRoaming: Home>Wireless plans & devices>Add-ons>Business travel and roaming
+travelAndRoamingFR: Accueil>Forfaits sans-fil et appareils>Options>Voyages d’affaires et itinérance
+travelAndRoamingMobile: Back to Wireless Plans & Devices
+travelAndRoamingMobileFR: Retour à Forfaits sans-fil et appareils
+
+# Device Protection Page
+deviceProtection: Home>Wireless plans & devices>Add-ons>Device protection
+deviceProtectionFR: Accueil>Forfaits sans-fil et appareils>Options>Protection de l’appareil
+deviceProtectionMobile: Back to Add-ons
+deviceProtectionMobileFR: Revenir aux options
+
+ioT: Home>The Internet of Things (IoT)
+ioTFR: Accueil>L’Internet des objets (IdO)
+ioTMobile: Back to Homepage
+ioTMobileFR: Retour à la page d’accueil
+
+fleetManagement : Home>The Internet of Things (IoT)>Fleet Management
+fleetManagementFR : Accueil>L’Internet des objets (IdO)>Gestion de parcs de véhicules
+fleetManagementMobile : Back to The Internet of Things
+fleetManagementMobileFR : Retour à la page l’Internet des objets
+
+assetManagement : Home>The Internet of Things (IoT)>Asset Management
+assetManagementFR : Accueil>L’Internet des objets (IdO)>Gestion des actifs
+assetManagementMobile : Back to The Internet of Things
+assetManagementMobileFR : Retour à la page Internet des objets
+
+smartCities : Home>The Internet of Things (IoT)>Smart Cities
+smartCitiesFR : Accueil>L’Internet des objets (IdO)>Villes intelligentes
+smartCitiesMobile : Back to Internet of Things
+smartCitiesMobileFR : Retour à la page Internet des objets
+
+LPWANetworks : Home>The Internet of Things (IoT)>Low Power Wide Area networks
+LPWANetworksFR : Accueil>L’Internet des objets(IdO)>Réseaux étendus à faible consommation d’énergie
+LPWANetworksMobile : Back to The Internet of Things
+LPWANetworksMobileFR : Retour à la page Internet des objets
+
+iotConnectivity : Home>The Internet of Things (IoT)>IoT Connectivity
+iotConnectivityFR : Accueil>L’Internet des objets (IdO)>Connectivité d’IdO
+iotConnectivityMobile : Back to The Internet of Things
+iotConnectivityMobileFR : Retour à la page l’Internet des objets
+
+enterpriseMobilityManagement: Home>Wireless plans & devices>Enterprise Mobility Management
+enterpriseMobilityManagementFR: Accueil>Forfaits sans-fil et appareils>Gestion de la mobilité en entreprise
+enterpriseMobilityManagementMobile: Back to Wireless
+enterpriseMobilityManagementMobileFR: Retour à sans-fil
+
+deviceFinancing: Home>Wireless plans & devices>Device Financing
+deviceFinancingFR: Accueil>Forfaits sans-fil et appareils>Financement d’appareil
+deviceFinancingMobile: Back to Wireless
+deviceFinancingMobileFR: Retour à sans-fil
+
+tv: Home>TV for Business
+tvFR: Accueil>Télé d’affaires
+tvMobile: Back to Homepage
+tvMobileFR: Retour à la page d'accueil
+
+workFromHome: Home>Internet Services>Work from home
+workFromHomeFR: Accueil>Services Internet>Solutions de travail à domicile
+workFromHomeMobile: Back to Internet Services
+workFromHomeMobileFR: Retour à la page Services Internet
+
+internetPlans: Home>Mobile Internet Plans
+internetPlansFR: Accueil>Mobile Internet Plans
+internetPlansMobile: Back to Homepage
+internetPlansMobileFR: Retour � la page d'accueil
+
+deviceEnrollment: Home>Wireless plans & devices>Device Enrollment
+deviceEnrollmentFR: Accueil>Forfaits sans-fil et appareils>Inscription de l’appareil
+deviceEnrollmentMobile: Back to Wireless
+deviceEnrollmentMobileFR: Retour à sans-fil
+
+
+electronicLoggingDevice : Home>The Internet of Things (IoT)>Electronic Logging Devices
+electronicLoggingDeviceFR : Accueil>L’Internet des objets (IdO)>Dispositif de consignation électronique
+electronicLoggingDeviceMobile : Back to Internet of Things
+electronicLoggingDeviceMobileFR : Retour à la page l’Internet des objets
+
+transportation : Home>Transportation Solutions
+transportationFR : Accueil>Solutions de transport
+transportationMobile : Back to Homepage
+transportationMobileFR : Retour à la page d'accueil
+
+appleBusinessManager: Home>Wireless plans & devices>Apple Business Manager
+appleBusinessManagerFR: Accueil>Forfaits sans-fil et appareils>Apple Business Manager
+
+wholesale : Home>Rogers Wholesale Solutions
+wholesaleFR : Accueil>Solutions en gros de Rogers
+wholesaleMobile : Back to Homepage
+wholesaleMobileFR : Retour à la page d’accueil
+
+partnerTypes: Home>Channel Partner Program>Channel Partner Program options
+partnerTypesFR: Accueil>Programme de partenariat de distribution>Types de partenariat
+partnerTypesMobile: Back to Channel Partner Program
+partnerTypesMobileFR: Retour à la programme de partenariat
+
+internetTVPhone: Home>Bundles>Internet, TV & Phone Bundles
+internetTVPhoneFR: Accueil>Offres groupées>Offres groupée de l'internet, télé et téléphonie
+internetTVPhonemobile: Back to Homepage
+internetTVPhonemobileFR: Retour à la page d'accueil
+
+
+longDistance : Home>Wireless plans & devices>Long Distance
+longDistanceFR: Accueil>Forfaits sans-fil et appareils>Long Distance
+longDistanceMobile: Back to Wireless
+longDistanceMobileFR: Retour � sans-fil
+
+cableLoyaltyOfferPage: Home>Internet Services>Upgrade to business-grade internet
+cableLoyaltyOfferPageFR: Accueil>Services Internet>Passez à notre service Internet de classe Affaires
+cableLoyaltyOfferPageMobile: Back to Internet Services
+cableLoyaltyOfferPageMobileFR: Retour à la page Services Internet
+
+
+loyaltyOfferPage: Home>Internet Services>Renew with Rogers Business Internet
+loyaltyOfferPageFR: Accueil>Services Internet>Renouvelez avec Internet Affaires de Rogers
+loyaltyOfferPageMobile: Back to Internet Services
+loyaltyOfferPageMobileFR: Retour à la page Services Internet
+
+
+addLineOffer : Home>Wireless Plans & Devices>Rogers Infinite Business Plan
+addLineOfferFR: Accueil>Forfaits sans-fil et appareils>Un forfait Infini de Rogers Affaires
+addLineOfferMobile: Back to Wireless Plans & Devices
+addLineOfferMobileFR: Retour à Forfaits sans-fil et appareils
+
+bizLoyaltyOffer : Home>Internet Services>Upgrade to business-grade internet
+bizLoyaltyOfferFR: Accueil>Services Internet>Passez à notre service Internet de classe Affaires
+bizLoyaltyOfferMobile: Back to Internet Services
+bizLoyaltyOfferMobileFR: Retour à la page Services Internet
+
+infiniteOfferPage: Home>Wireless plans & devices>Rogers Infinite for Business
+infiniteOfferPageFR: Accueil>Forfaits sans-fil et appareils>Infini de Rogers service Affaires
+infiniteOfferPageMobile: Back to Wireless plans & devices 
+infiniteOfferPageMobileFR: Retour à la Forfaits sans-fil et appareils
+
+bizCableLoyaltyOffer: Home>Internet Services>Renew with Rogers Business Internet
+bizCableLoyaltyOfferFR: Accueil>Services Internet>Renouvelez avec Internet Affaires de Rogers
+bizCableLoyaltyOfferMobile: Back to Internet Services
+bizCableLoyaltyOfferMobileFR: Retour à la page Services Internet
+
+sipTrunkingPage: Home>Voice and Collaboration Solutions>SIP Trunking
+sipTrunkingPageFR: Page d’accueil>Solutions de transmission de la voix et de collaboration>Connectivité par technologie SIP
+sipTrunkingPageMobile: Back to Voice & Collaboration
+sipTrunkingPageMobileFR: Retourner à la section Solutions de transmission de la voix et de collaboration
+
+accountCheckin: Home>Account Checkin
+accountCheckinFR: Accueil>Account Checkin
+accountCheckinMobile: Back to Wireless
+accountCheckinMobileFR: Retour � sans-fil
+
+lunchonus: Home>Lunch On Us
+lunchonusFR: Page d’accueil>Lunch On Us
+lunchonusMobile: Lunch On Us
+lunchonusMobileFR: Lunch On Us
+
+bizCableLoyaltyOffer: Home>Internet Services>Renew with Rogers Business Internet
+bizCableLoyaltyOfferFR: Accueil>Services Internet>Renouvelez avec Internet Affaires de Rogers
+bizCableLoyaltyOfferMobile: Back to Internet Services
+bizCableLoyaltyOfferMobileFR: Retour à la page Services Internet

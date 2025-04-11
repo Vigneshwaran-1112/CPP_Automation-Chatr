@@ -1,0 +1,20 @@
+# Retail Test data Details
+retailData:
+- username: 'retail.testing@outlook.com'#'retail.testing10@outlook.com'      # Retail Agent Login
+  password: 'Champ@123' #'Chatr@123'
+  dealerCode: 'QP00H'
+- username: 'retailcorporate.testing11@outlook.com'  # 'retailcorporate.testing@outlook.com' # Retail Corporate Agent Login
+  password: 'Chatr@123'
+  dealerCode: 'QC9DE'
+- username: 'testing.care9@outlook.com' # Care Agent Login
+  password: 'Champ@123'
+  dealerCode: 'QC7BL'
+- username: 'test_cpp_user1@outlook.com'   #'testing.kiosk@outlook.com'# Kiosk Agent Login
+  password: 'Champ@123'
+  dealerCode: 'TSR5D'
+- username: 'carebot.testing@outlook.com'  # CareBot Agent Login
+  password: 'Champ@123'
+  dealerCode: 'QC7BL'
+- username: 'testing.lar@outlook.com'  # LAR Agent Login
+  password: 'Champ@123'
+  dealerCode: 'QC7BL'

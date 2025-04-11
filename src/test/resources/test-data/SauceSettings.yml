@@ -1,0 +1,35 @@
+# sauce capabilities, microsoftedge
+---
+sauceOptions:
+   seleniumVersion: 3.141.59
+   name: Rogers - R4B
+   maxDuration: 1200
+   commandTimeout: 400
+   idleTimeout: 180
+   build: Rogers-R4B
+mutableFireFoxCapabilities:  
+   platformName: Windows 10
+   browserVersion: latest
+mutableChromeCapabilities:   
+   platformName: Windows 10
+   browserVersion: 109
+   screenResolution: 1280x960
+mutableEdgeCapabilities:   
+   platformName: Windows 10
+   browserVersion: latest 
+mutableSafariCapabilities:   
+   platformName: macOS 11.00
+   browserVersion: latest   
+androidChromeCapabilities:
+   platformName: Android
+   platformVersion: 11.0
+   appiumVersion: 1.20.2
+   deviceName: Android GoogleAPI Emulator
+   deviceOrientation: portrait
+iosSafariCapabilities:
+   platformName: iOS
+   platformVersion: 14.3
+   appiumVersion: 1.20.1
+   deviceName: iPhone XS Simulator
+   deviceOrientation: portrait
+...

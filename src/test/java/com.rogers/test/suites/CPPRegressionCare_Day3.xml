@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="CPPRegressionCare_Day3" preserve-order="true" parallel="false" thread-count="2">
+    <listeners>
+        <!--<listener class-name="com.rogers.test.listeners.AnnotationTransformer"/>
+&lt;!&ndash;        <listener class-name="com.chatr.listeners.AnnotationTransformer"/>&ndash;&gt;
+        <listener class-name="extentreport.ExtentListener"/>-->
+    </listeners>
+    <!-- DAY 3 EXECUTION -->
+    <test name="CPPRegressionCare_Day3">
+        <classes>
+            <class name="com.rogers.test.tests.desktop.customerCare.CP_CareFlows"/>
+            <class name="com.rogers.test.tests.desktop.customerCare.CP_CustomerValidation"/>
+            <class name="com.rogers.test.tests.desktop.customerCare.CP_CareFlows_Report"/>
+            <class name="com.rogers.test.tests.desktop.customerCare.CP_DashBoardValidation"/>
+            <class name="com.rogers.test.tests.desktop.customerCare.CP_PortInValidation"/>
+        </classes>
+    </test>
+</suite>

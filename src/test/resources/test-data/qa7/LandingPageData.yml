@@ -1,0 +1,10 @@
+# Self-Serve Links
+
+selfServeLandingPage : https://qa7-cpp.chatrwireless.com/
+carePortalLandingPage :  https://qa7-cpp.chatrwireless.com/care/         #https://chatr-qa-auto2.qa01.eks.rogers.com/care/
+champLandingPage : https://qa01-unilogin.rogers.com/
+retailerLandingPage : https://qa7-cpp.chatrwireless.com/retailer/        #https://chatr-qa-auto2.qa01.eks.rogers.com/retailer #
+ensLandingPage : http://ensqa3.rogers.com/ENS/notificationsViewer.action
+otpLandingPage : https://chatr-qa-auto.qa01.eks.rogers.com/otp/v1/test/sms
+historyReportDirectUrl: https://qa7-cpp.chatrwireless.com/account/reports
+MAOPageDirectUrl: https://qa7-cpp.chatrwireless.com/account/manage-add-ons

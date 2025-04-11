@@ -1,0 +1,8 @@
+# Boundary Value Check
+
+minValue : 1
+maxValue : 100
+lowValue : 0
+highValue : 101
+manualStepperVal1 : 18
+manualStepperVal2 : 25

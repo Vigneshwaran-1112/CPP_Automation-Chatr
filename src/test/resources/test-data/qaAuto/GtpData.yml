@@ -1,0 +1,23 @@
+#Guest Top up flow Data
+gtpData:
+- phoneNumber: '416-817-2661' #416-817-8129' #416-275-4054' #416-817-8129' #647-539-8603'
+  firstName: 'Auto'
+  lastName: 'Test'
+  city: 'Toronto'
+  cardNumber: '4545157625538881'
+  cvv: '123'
+  expiryDate: '12/25'
+  topUp: '1'
+  # International Credit Card
+- cardNumber: '4200123456719012' # TC - 30917 International Credit Card
+  cvv: '123'
+  expiryDate: '12/25'
+  # International Billing Address
+  country: 'India'
+  city: 'Pune'
+  postalCode: '411005'
+  provinceFullName: 'Maharashtra'
+  # 300$ voucher error Validation
+  phoneNumberVoucher: '416-817-8131' # TC - 35763 exceed 300
+  voucher300: '545513870025' # TC - 35763 exceed 300
+  phoneNumber: '416-275-2834' #37183

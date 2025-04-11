@@ -1,0 +1,31 @@
+#NAC flow Data
+nacData:
+- province: 'ON' #'BC'#
+  city:  'Toronto'   # 'British Columbia'#
+  country : 'Canada'
+  planTab : '4G Nation-Wide Talk, Text & Data'
+  planValue: '25'
+  cardNumber: '4545157625538881'
+  cvv: '123'
+  expiryDate: '12/25'
+  topUp: '20'
+  provinceFullName: 'Ontario' # 'Vancouver'#
+  firstName: 'Automation' #'John'
+  lastName: 'Test' # 'Smith'
+  email: 'vigneshwaran.sesurag@rci.rogers.com'#'ramesh12345@gmail.com'#'johnsmith@rci.rogers.ca'
+  dateOfBirth: '01/01/2000' # '08/03/1997'
+  altPhoneNumber: '012-345-6789'
+  cityAddress: '4 Ambler Bay'
+  voucherPIN: '842836845351' # All the Voucher Msg validation without submit
+  nacVoucherPIN: '559532627459;473721743864;311039412931;384890016846;192659773246;842836845351;464287416478;685963051338' #TC-34890 successful voucher submission. Each time need to update
+  usedVoucherPIN: '559532627459' #TC-34894
+  msfVoucherPIN: '861449929980' #TC-34901 , $30 dollar
+- country: 'United States'
+  city : 'Ambler'
+  planValue: '25' #TC-34901
+- country: 'India'
+  city: 'Pune'
+  postalCode: '411005'
+  provinceFullName: 'Maharashtra'
+- city: 'Prince George' # TC - 27681
+  province: 'BC'

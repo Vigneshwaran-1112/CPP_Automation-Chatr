@@ -1,0 +1,7 @@
+accountData:
+  - username : 'cus123@mock.com'
+    password : 'Rogers123'
+  - username : 'test3'
+    password : 'test4'
+  - username : 'cus567@mock.com'
+    password : 'Rogers123'

@@ -1,0 +1,9 @@
+planData:
+  - planValue : '50'
+    topUp : '0.5'
+  - planValue : '47'
+    topUp : '270'
+  - planValue : '30'
+    topUp : '1'
+  - planValue: '60'
+    topUp: '1'

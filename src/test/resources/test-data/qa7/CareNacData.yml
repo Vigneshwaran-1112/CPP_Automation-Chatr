@@ -1,0 +1,85 @@
+#Care NAC flow Data
+careNacData:
+  - province: 'ON'
+    city:  'Toronto' #'Brantford'
+    country : 'Canada'
+    planTab : '3G Nation-Wide Talk, Text & Data'
+    planValue: '25'
+    cardNumber: '4545157625538881'
+    cvv: '123'
+    expiryDate: '12/24'
+    topUp: '1'
+    provinceFullName: 'Ontario'
+    firstName: 'Auto'
+    lastName: 'Test'
+    email: 'Vigneshwaran.Sesurag@rci.rogers.com' #'ramanujam.arunachala@rci.rogers.com'
+    dateOfBirth: '02/04/1997'
+    altPhoneNumber: '012-345-6789'
+    cityAddress: '4 Ambler Bay'
+    voucherPIN: '589196892996' # All the Voucher Msg validation without submit
+    nacVoucherPIN: '391794498733' #TC-34890 successful voucher submission. Each time need to update
+    usedVoucherPIN: '680364674103' #TC-34894
+    msfVoucherPIN: '861449929980' #TC-34901 , $30 dollar
+    dslService: 'No'
+    oldReseller: 'Cable Cable'
+    billingContactPersonal: 'Personal'
+    billingContactBusiness: 'Business'
+    username: 'retail.testing@outlook.com' #29086
+    password: 'Champ@123' #29086
+    dealerCode: 'QP00H' #29086
+    postalCode: 'M1E 4A2'
+    address: '327 Beechgrove Dr'
+    paymtHtySubFilter: "Transaction type;How you paid;Status"    # Payment History Sub Filter Option
+    paymtHtyColumnName: "Date and time;Transaction type;Status;Account balance;Subtotal;Tax;Total"   # Payment History Search Result Column Name
+    orderHtySubFilter: "Order type;How you paid;Status"      # Order History Sub Filter Option
+    orderHtyColumnName: "Order type;Date and time;Order updated on;How you paid;Status;Order;Customer care"    # Order History Search Result Column Name
+    targetedOfferHtySubFilter: 'Offer code;Status'
+    targetedOfferHtyColumnName: 'Offer code;Description;Status;Activate offer;Accepted date;Start date'
+    acctHtyColumnName: 'Date and time;Transaction type;Amount;Account balance;How you paid'
+    acctHtySubFilter: 'Transaction type;How you paid'
+    usageHtySubFilter: 'Usage type;Coverage type'
+    usageHtyColumnName: 'Date and time;Usage type;You used;Amount;Account balance;Coverage type;Number dialed'
+    adjustmentHtyColumnName: 'Date and time;Username;Reason code;Amount;Adjustment type;Account balance'
+    voucher: '473721743864;311039412931;384890016846;192659773246;842836845351;464287416478;685963051338' #used,unused..
+    phoneNumber: '416-817-8125' #437-772-6233' #416-817-0166' #438-787-0992'#42209,42208
+    targetedPhoneNumber: '416-278-1005' #437-307-6514' #416-278-1005'
+    phoneNumberWithCC: '416-817-4372'
+    phoneNumberWithoutCC: '437-307-1363'
+    phoneNumberSAportin: '416-921-1234'
+    phoneNumberPortIn: '416-817-8125' #514-942-0716
+    phoneNumberLandline: '416-921-5647'
+    phoneNumberBell: '514-942-0716'
+    nacPortInSerial: '514-942'
+    nacPortInNumber: '416-921'
+    nacPortInWireless: '416-729' #wireless XYZ series
+    statusText: 'Active Ongoing'
+    serialNumber: '12345678912345678'
+    phoneAccountNumber: '123456789'
+    pin: '123456'
+    phoneNumberOrderRpt: '902-441-5028' #416-275-4884'
+    phoneNumberAdjustmentRpt: '416-275-4884'
+    phoneNumberAccountRpt: '416-275-4884'
+    phoneNumberPaymentRpt: '416-275-4884'
+    phoneNumberUsageRpt: '416-275-4884'
+    phoneNumberTargetRpt: '437-307-6514'
+    oldPhoneNumber: '902-441-5027'
+    newPhoneNumber: '902-441-5031'
+    downgradePlan: '30'
+  - country: 'United States'
+    city : 'Ambler'
+    phoneNumber: '416-921-1234' #416-312-2992 #29650
+    planValue: '40' #TC-34901
+    email: 'vaibhav.dhon@rci.rogers.com'
+    dateOfBirth: '12/07/1999'
+    address: '327 Beechgrove Dr'
+  - country: 'India'
+    city: 'Pune'
+    postalCode: '411005'
+    provinceFullName: 'Maharashtra'
+    planValue: '40' #31275
+  - city: 'Quebec' # TC - 27681
+    province: 'QC'
+  - phoneNumber: '647-201-3140'
+  - phoneNumber: '416-278-1005' #437-307-6514'
+  - phoneNumber: '647-242-2530' #TNC
+  - phoneNumber: '437-772-6233'

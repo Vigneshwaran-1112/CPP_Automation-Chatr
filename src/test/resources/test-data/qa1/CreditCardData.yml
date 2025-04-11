@@ -1,0 +1,8 @@
+#creditcard data
+creditCardData:
+  - cardNumber : '4545157625538881'
+    cvv : '123'
+    expiryDate : '12/23'
+#credit card number for account cus123@mock.com
+  - cardNumber : '2345'
+

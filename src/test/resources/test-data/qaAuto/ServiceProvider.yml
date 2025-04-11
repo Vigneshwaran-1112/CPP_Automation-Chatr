@@ -1,0 +1,55 @@
+serviceProvider:
+  - saskTellMobileNumber: '306-201-3012'
+    serialNumber: '12345678912345678'
+    invalidAccountNumber1 : '1234567'
+    invalidAccountNumber2 : '123456789'
+    validAccountNumber : '12345678'
+    validAccountNumber1 : '02345678'
+  - bellMobileNumber: '514-942-1234'
+    validAccountNumber1: '523456789'
+    invalidAccountNumber1: '12345678'
+    invalidAccountNumber2: '1234567890'
+    validAccountNumber2: '1004567890123'
+    invalidAccountNumber3: '100456789012'
+    invalidAccountNumber4: '10045678901234'
+    invalidAccountNumber5: '2004567890123'
+    validAccountNumber3: '52891076uoz080'
+    invalidAccountNumber6: '5289107uoz080'
+    invalidAccountNumber7: '52891076uz080'
+    invalidAccountNumber8: '52891076uoz08'
+  - fidoMobileNumber: '416-838-1100'
+    validAccountNumber2: '34982375'
+    validAccountNumber3: '834982375'
+    validAccountNumber4: '434982375'
+  - rogersMobileNumber: '416-278-1100'
+    validAccountNumber2: '134982375'
+  - freedomMobileNumber: '403-392-4730'
+    invalidAccountNumber1: 'D12345678'
+    invalidAccountNumber2: '6BA12345678901'
+    invalidAccountNumber3: 'BA123456789012'
+    validAccountNumber: 'DBA00045678901'
+  - telusMobileNumber: '416-678-9076'
+    invalidAccountNumber1: '12'
+    invalidAccountNumber2: '12345678901'
+    validAccountNumber1: '123'
+    validAccountNumber2: '0000012345'
+    invalidAccountNumber3: '00045678901'
+    invalidAccountNumber4: '20000000901234'
+    invalidAccountNumber5: '10000090123456'
+    validAccountNumber3: '10000000901234'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

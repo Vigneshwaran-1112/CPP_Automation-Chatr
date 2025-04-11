@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="E2E11" preserve-order="true" parallel="false" thread-count="2">
+    <listeners>
+        <!--<listener class-name="com.rogers.test.listeners.AnnotationTransformer"/>
+&lt;!&ndash;        <listener class-name="com.chatr.listeners.AnnotationTransformer"/>&ndash;&gt;
+        <listener class-name="extentreport.ExtentListener"/>-->
+    </listeners>
+    <test name="E2E11">
+        <classes>
+            <class name="com.rogers.test.tests.desktop.selfServe.NAC_CreditCard_Flow_Test">
+                <methods>
+                    <!--<include name="CPP_54706_Validate_NAC_Flow_Ontario_Tax_validation"/>--> <!-- TC 01 -->
+                    <include name="TC_01_Validate_E2E_NAC_withCC_and_ensure_the_tax_calculation_is_correct_and_provisioning_is_successful_in_all_the_systems_like_D1_PBM_RTRM_with_the_email_notification"/>
+                </methods>
+            </class>
+            <class name="com.rogers.test.tests.desktop.selfServe.NAC_Voucher_Flow_Test">
+                <methods>
+                    <!--<include name="CPP_45728_Validate_Voucher_Submitted_Value_Less_Than_Plan_MSF_NAC_low"/>-->  <!-- TC 02 -->
+                    <include name="TC_02_Validate_E2E_NAC_partial_payment_with_Voucher_and_ensure_the_provisioning_is_successful_in_all_the_systems_like_D1_PBM_RTRM_with_the_email_notification"/>
+                </methods>
+            </class>
+            <class name="com.rogers.test.tests.desktop.selfServe.PPCTest">
+                <methods>
+                    <!--<include name="CPP_37263_Validate_View_Shopping_Cart_when_Proration_is_added_Upgrade_AC04"/> &lt;!&ndash; TC 03 &ndash;&gt;
+                    <include name="CPP_37260_Validate_View_Shopping_Cart_when_Proration_is_added_Downgrade_AC04"/> &lt;!&ndash; TC 04 &ndash;&gt;-->
+
+                    <include name="TC_03_Validate_E2E_PPC_upgrade_using_CC_and_ensure_the_tax_calculation_and_Proration_is_correct_and_provisioning_is_successful_in_all_the_systems_like_D1_PBM_RTRM_with_the_email_notification"/>
+                    <include name="TC_04_Validate_E2E_PPC_downgrade_using_CC_and_ensure_the_tax_calculation_and_Proration_is_correct_and_provisioning_is_successful_in_all_the_systems_like_D1_PBM_RTRM_with_the_email_notification"/>
+                </methods>
+            </class>
+            <class name="com.rogers.test.tests.desktop.selfServe.AccountManagement_Test">
+                <methods>
+                    <!--<include name="CPP_37483_Validate_ManageAddOnsFlow_WithCreditCard"/> &lt;!&ndash; TC 05 &ndash;&gt;
+                    <include name="CPP_38939_Validate_Autopay_UnEnrollment_Flow"/>--> <!-- TC 07 -->
+
+                    <include name="TC_05_Validate_E2E_MAO_using_CC_and_ensure_the_tax_calculation_is_correct_and_provisioning_is_successful_in_all_the_systems_like_D1_PBM_RTRM_with_the_email_notification"/> <!-- TC 05 -->
+                    <include name="TC_07_Validate_E2E_APU_and_ensure_the_autopay_unenrollment_is_successful"/> <!-- TC 07 -->
+                </methods>
+            </class>
+            <class name="com.rogers.test.tests.desktop.selfServe.EnrollPayment_Test">
+                <methods>
+<!--                    <include name="CPP_33309_Validate_User_Submit_Autopay_Enrollment_With_Selected_Terms_Conditions_Checkbox"/> &lt;!&ndash; TC 06 &ndash;&gt;-->
+                    <include name="TC_06_Validate_E2E_APE_and_ensure_tax_calculation_and_the_provisioning_is_successful_in_all_the_systems_like_D1_PBM_RTRM_with_the_email_notification"/>
+                </methods>
+            </class>
+            <class name="com.rogers.test.tests.desktop.selfServe.SimSwap_Test">
+                <methods>
+                    <!--<include name="CPP_24594_validate_SimSwap_for_current_simNumber_Green_Checkmark_As_Successful"/>--> <!-- TC 08 -->
+                    <include name="TC_08_Validate_E2E_SIM_SWAP_flow_and_ensure_the_provisioning_is_successful_in_all_CPP_systems__SS"/>
+                </methods>
+            </class>
+            <class name="com.rogers.test.tests.desktop.selfServe.UnAuthenticated_TopUpVoucher_Test">
+                <methods>
+<!--                    <include name="CPP_37140_TC2_Validate_Successful_topup_Voucher"/> &lt;!&ndash; TC 09 &ndash;&gt;-->
+                    <include name="TC_09_Validate_E2E_guest_top_up_with_voucher_and_ensure_the_top_up_amount_is_added_successfully_to_the_customer"/>
+                </methods>
+            </class>
+            <class name="com.rogers.test.tests.desktop.selfServe.AuthenticatedTopUp_TEST">
+                <methods>
+<!--                    <include name="CPP_26951_Validate_Topup_Payment_Saved_Credit_Card"/> &lt;!&ndash; TC 10 &ndash;&gt;-->
+                    <include name="TC_10_Validate_E2E_authenticated_top_up_using_CC_and_ensure_the_Tax_is_calculated_correctly_and_the_top_up_amount_is_added_successfully_to_the_customer"/>
+                </methods>
+            </class>
+            <class name="com.rogers.test.tests.desktop.selfServe.EASPage_Test">
+                <methods>
+<!--                    <include name="CPP_34989_Validate_Log_into_my_account_CTA"/> &lt;!&ndash; TC 11 &ndash;&gt;-->
+                    <include name="TC_11_Registration_flow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

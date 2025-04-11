@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CPP_E2E">
+    <listeners>
+        <listener class-name="com.rogers.test.listeners.AnnotationTransformer"/>
+        <listener class-name="extentreport.ExtentListener"/>
+    </listeners>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/vigneshwaran.sesurag/Gradle/CPP_Automation-Chatr/src/test/java/com.rogers/test/tests/desktop/E2E/CPP_E2E_TestCases.java">
+        <classes>
+            <class name="com.rogers.test.tests.desktop.E2E.CPP_E2E_TestCases">
+            <methods>
+                <include name="guest_Topup_Flow"></include>
+                <include name="nac_With_CreditCard_pSim"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

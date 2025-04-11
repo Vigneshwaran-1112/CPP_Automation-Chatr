@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="CPPRegressionSS" preserve-order="true" parallel="false" thread-count="2">
+    <listeners>
+        <!--<listener class-name="com.rogers.test.listeners.AnnotationTransformer"/>
+&lt;!&ndash;        <listener class-name="com.chatr.listeners.AnnotationTransformer"/>&ndash;&gt;
+        <listener class-name="extentreport.ExtentListener"/>-->
+    </listeners>
+    <!-- DAY 1 EXECUTION -->
+    <test name="CPPRegressionSS">
+        <classes>
+            <class name="com.rogers.test.tests.desktop.selfServe.UnAuthenticated_TopUp_Test">
+            <methods>
+                <include name="CPP_29292_validate_Unauthenticated_topUp_initiateNew_Topup"/>
+                <include name="CPP_29449_ValidateTopUpAmountExceedsBalanceLimit"/>
+            </methods>
+           </class>
+       <!--     <class name="com.rogers.test.tests.desktop.selfServe.HistoryReports_Test"/>
+            <class name="com.rogers.test.tests.desktop.selfServe.AccountManagement_Test"/>
+            <class name="com.rogers.test.tests.desktop.selfServe.UnAuthenticated_TopUp_Test"/>
+
+            <class name="com.rogers.test.tests.desktop.selfServe.StoreLocator_Test"/>
+            <class name="com.rogers.test.tests.desktop.selfServe.RegisterPage_Test"/>
+            <class name="com.rogers.test.tests.desktop.selfServe.Misc_Test"/>
+            <class name="com.rogers.test.tests.desktop.selfServe.EASPage_Test"/>
+            <class name="com.rogers.test.tests.desktop.selfServe.NAC_CreditCard_Flow_Test"/>
+            <class name="com.rogers.test.tests.desktop.selfServe.NAC_PortInFlow_Test"/>-->
+        </classes>
+    </test>
+</suite>

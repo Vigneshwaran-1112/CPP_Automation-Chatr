@@ -1,0 +1,45 @@
+#Price Plan Change flow Data
+ppcData:
+  #Saved Credit Card
+  - username: 'june2024191413@rci.rogers.com'#'march2024211110@rci.rogers.com' #augchatr60@automation.com' #'maychatr584@automation.com'
+    password: 'Rogers123'
+    planTab: '3G Nation-Wide Talk, Text & Data'
+    planValue: '25'
+    mutuallyExclusivePlanValue: '25'
+    upGradePlanValue: '25'
+    downGradePlanValue: '15'
+    addOn1: 'One Time Data Plus 2GB'
+    addOn2: 'TEST_N_One Time Data Plus 3GB'
+    addOn3: 'TEST_N_One Time Data Plus 4GB'
+    cardNumber: '4545157625538881'
+    cvv: '123'
+    expiryDate: '12/24'
+    extraMoney: '10'
+    provinceFullName: 'Ontario'
+    firstName: 'Auto'
+    lastName: 'Test'
+    cityAddress: '4 Ambler Bay'
+    voucherPIN: '589196892996;391794498733;462351416744;803998484069;219503190542;910456053814' # All the Voucher Msg validation without submit
+    # UnSaved Credit Card Login
+  - username: 'june2024191415@rci.rogers.com' #'september2023101446@rci.rogers.com'
+    password: 'Rogers123'
+    planTab: '4G Nation-Wide Talk, Text & Data'
+    country: 'United States'
+    city: 'Ambler'
+    cardNumber: '4200123456719012' # TC - 29259 International Credit Card
+    cvv: '123'
+    expiryDate: '12/23'
+    # Login should have Mutually_Exclusive_add_on
+  - username: 'maychatr160@automation.com'
+    password: 'Rogers123'
+    # Positive scenario
+  - username: 'maychatr751@automation.com'
+    password: 'Rogers123'
+  - planValue: '25'
+    voucher25: '642441733063'
+    username: 'amruta105@fitchatr.com'
+    password: 'Rogers123'
+    # With Sufficient Account Balance and without existing  Addons CPP_37504
+  - username: 'chatrauto393@automation.com'
+    password: 'rogers123'
+

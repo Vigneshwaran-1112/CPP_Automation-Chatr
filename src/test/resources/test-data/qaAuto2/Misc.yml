@@ -1,0 +1,10 @@
+miscData:
+  - code: '0: Object'
+  - code: '041'
+    amount: '0.00'
+    exception: 'FirstException'
+  - pin: '1234'
+  - pin1: '1234'
+    pin2: '123'
+  - pin1: '123'
+    pin2: '123'

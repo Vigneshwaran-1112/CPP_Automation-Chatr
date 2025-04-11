@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="CPPRegressionSS_Day2" preserve-order="true" parallel="false" thread-count="2">
+    <listeners>
+        <!--<listener class-name="com.rogers.test.listeners.AnnotationTransformer"/>
+&lt;!&ndash;        <listener class-name="com.chatr.listeners.AnnotationTransformer"/>&ndash;&gt;
+        <listener class-name="extentreport.ExtentListener"/>-->
+    </listeners>
+    <!-- DAY 2 EXECUTION -->
+    <test name="CPPRegressionSS_Day2">
+        <classes>
+            <class name="com.rogers.test.tests.desktop.selfServe.HistoryReports_Test1"/>
+            <class name="com.rogers.test.tests.desktop.selfServe.UnAuthenticated_TopUp_Test"/>
+            <class name="com.rogers.test.tests.desktop.selfServe.AccountManagementVoucher_Test"/>
+            <class name="com.rogers.test.tests.desktop.selfServe.UnAuthenticated_TopUpVoucher_Test"/>
+            <class name="com.rogers.test.tests.desktop.selfServe.AuthenticatedTopUpVoucher_TEST"/>
+            <class name="com.rogers.test.tests.desktop.selfServe.NAC_Voucher_Flow_Test"/>
+            <class name="com.rogers.test.tests.desktop.selfServe.NAC_PortInFlow_Test1"/>
+            <class name="com.rogers.test.tests.desktop.selfServe.PPCTest"/>
+            <class name="com.rogers.test.tests.desktop.selfServe.SimSwap_Test"/>
+        </classes>
+    </test>
+</suite>

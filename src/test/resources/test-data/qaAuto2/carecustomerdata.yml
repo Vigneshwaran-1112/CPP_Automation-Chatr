@@ -1,0 +1,107 @@
+# customer data phoneNumber Authentication Details
+careCustomerData:
+  - username: 'testing.care9@outlook.com'
+    password: 'Champ@123'
+    dealerCode: 'QC7BL'
+    phoneNumber: '416-319-1350'
+    expiredPhoneNumber: '416-278-1870'
+    wirelessCTN: '416-678-3456'
+    altPhoneNumber: '1234567890'
+    planTab: '3G Nation-Wide Talk, Text & Data'
+    planValue: '25'
+    downGradePlanValue: '30'
+    anniversaryDate : '2'
+    cardNumber: '4545157625538881' # local credit card
+    cvv: '123'
+    expiryDate: '12/24'
+    cardNumber1: '4200123456719012' # Internatioanl credit card
+    cvv1: '123'
+    expiryDate1: '12/24'
+    province: 'ON'
+    city:  'Toronto' #'Brantford'
+    country: 'Canada'
+    topUp: '1'
+    provinceFullName: 'Ontario'
+    #Authentication Details
+    firstName1: 'Auto'
+    lastName1: 'Test'
+    dateOfBirth: '02/04/1997'
+    postalCode: 'L6T0C1'
+    email: 'ramanujam.arunachala@rci.rogers.com'
+    value: '003'
+    value1: '041'
+    value2: '0.00'
+    value3: 'First Exception'
+    amount: '50'
+    #wildcard search
+    firstName: 'man*'
+    lastName: 'bat*'
+    #emailflagvalidation
+    phoneNumber2: '437-307-2868'
+    voucherPIN: '007725087989;212229896962;941490701622;567804791722;559532627459;473721743864;311039412931;384890016846'
+    usedVoucher: '680364674103'
+    # valid $10 voucher
+    voucher10: '728641638204'
+    # valid $30 voucher
+    voucher30: '998639136834'
+    # valid $70 voucher
+    voucher70: '800000025014'
+    # valid $100 voucher
+    voucher100: '007725087989;212229896962;941490701622;567804791722;559532627459;473721743864;311039412931;384890016846'
+    paymtHtySubFilter: "Transaction type;How you paid;Status"    # Payment History Sub Filter Option
+    paymtHtyColumnName: "Date and time;Transaction type;Status;Account balance;Subtotal;Tax;Total"   # Payment History Search Result Column Name
+    orderHtySubFilter: "Order type;How you paid;Status"      # Order History Sub Filter Option
+    orderHtyColumnName: "Order type;Date and time;Order updated on;How you paid;Status;Order #"    # Order History Search Result Column Name
+    targetedOfferHtySubFilter: 'Offer code;Status'
+    targetedOfferHtyColumnName: 'Offer code;Description;Status;Activate offer;Accepted date;Start date'
+    acctHtyColumnName: 'Date and time;Transaction type;Amount;Account balance;How you paid'
+    acctHtySubFilter: 'Transaction type;How you paid'
+    usageHtySubFilter: 'Usage type;Coverage type'
+    usageHtyColumnName: 'Date and time;Usage type;You used;Amount;Account balance;Coverage type;Number dialed'
+    adjustmentHtyColumnName: 'Date and time;Username;Reason code;Transaction type;Amount;Adjustment type;Account balance'
+    phoneNumberWithCC: '416-275-4102' #416-817-8120' #416-817-4372'
+    phoneNumberWithoutCC: '416-275-4101' #416-275-4054' #416-278-3482' #437-307-1363'
+    phoneNumberMAO: '437-307-6514' #418-456-0034' # TC 31204
+    phoneNumberSAportin: '416-921-1234'
+    phoneNumberPortIn: '416-817-8125' #514-942-0716
+    phoneNumberLandline: '514-942-0716'
+    dateOfBirthCCUser: '01/01'
+    expanniversaryDate: '21'#'17'
+    expdateOfBirth: '14/08'
+    planValue3StackedPromotions: '25'#45352
+    planValue2StackedPromotions: '15'#49453
+    phoneNumberPromotion: '416-275-1593'#780-964-8680'
+    targetedPhoneNumber: '437-307-6514'
+    #invalid customer details
+  - phoneNumber: '437-307-2303' # Autopay enroll error message
+    #Authentication Details
+    dateOfBirth: '11/11/1991'
+    postalCode: 'M563E'
+    email: 'febchatr02@automation.com'
+    topUp: '0;320' #42588
+  - phoneNumber: '437-307-3372' # TC -30984
+  - phoneNumber: '437-307-3371' # TC -42375, 42374
+    # Expiry Account
+  - phoneNumber: '437-307-3669' # TC -42577
+    # TC -30981 Mobilicity_Customer_On_Customer_DashBoard
+  - phoneNumber: '437-307-3669'
+    postalCode: ''
+  - phoneNumber: '416-817-4372'
+  - phoneNumber: '437-999-8975' #42411
+    dateOfBirth: '01/01/2000'
+  - phoneNumber: '647-200-1609' #42413
+  - phoneNumber: '647-201-2974' #42414
+  - phoneNumber: '647-201-3140' #42420
+  - phoneNumber: '437-307-6514' #42564 // Report
+  - phoneNumber: '647-205-8209' #42598
+  - phoneNumber: '647-241-0393' #42598
+  - phoneNumber: '647-242-2530' #31165 // TNC
+  - phoneNumber: '437-307-3669' #Inactive
+    postalCode: ''
+  - phoneNumber: '416-817-4372'
+  - country: 'India'
+    city: 'Pune'
+    postalCode: '411005'
+    provinceFullName: 'Maharashtra'
+    phoneNumberWithPromotion: '416-275-4475'
+    dateOfBirthPromotionUser: '01/01'

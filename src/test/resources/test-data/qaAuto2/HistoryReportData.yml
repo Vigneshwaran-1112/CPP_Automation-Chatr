@@ -1,0 +1,16 @@
+#History Report flow Data
+hisrptData:
+  - username: 'june2024191415@rci.rogers.com'
+    password: 'Rogers123'
+    paymtHtySubFilter: "Transaction type;How you paid;Status"    # Payment History Sub Filter Option
+    paymtHtyColumnName: "Date and time;Transaction type;Status;Account balance;Subtotal;Tax;Total"   # Payment History Search Result Column Name
+    orderHtySubFilter: "Order type;How you paid;Status"      # Order History Sub Filter Option
+    orderHtyColumnName: "Order type;Date and time;Order updated on;How you paid;Status;Order #"    # Order History Search Result Column Name
+    targetedOfferHtySubFilter: 'Offer code;Status'
+    targetedOfferHtyColumnName: 'Offer code;Description;Status;Activate offer;Accepted date;Start date'
+    acctHtyColumnName: 'Date and time;Transaction type;Amount;Account balance;How you paid'
+    acctHtySubFilter: 'Transaction type;How you paid'
+    usageHtySubFilter: 'Usage type;Coverage type'
+    usageHtyColumnName: 'Date and time;Usage type;You used;Amount;Account balance;Coverage type;Number dialed'
+    adjustmentHtyColumnName: 'Date and time;Username;Reason code;Transaction type;Amount;Adjustment type;Account balance'
+    orderHtyColumnNameFR: "Type de commande;Date et heure;Commande mise à jour le;Mode de paiement;État;Numéro de commande"

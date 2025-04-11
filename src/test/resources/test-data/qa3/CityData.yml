@@ -1,0 +1,17 @@
+#citydata
+cityData:
+  - province: 'ON'
+    provinceFullName: 'Ontario'
+    city: 'Toronto'
+    postalCode: 'M3H 0C3'
+    store : 'Chatr'
+  - province : 'ON'
+    provinceFullName : 'Ontario'
+    city : 'Toronto'
+    store : 'Retailer'
+    postalCode : 'M3C 0E3'
+  - postalCode : 'M5H1R4'
+  - postalCode : 'M3H0C'
+  - city : 'Ambler'
+    country: 'United States'
+

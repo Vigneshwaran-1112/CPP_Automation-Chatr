@@ -1,0 +1,24 @@
+#Guest Top up flow Data
+gtpData:
+- phoneNumber: '4169041057'
+  firstName: 'Ramesh'
+  lastName: 'K'
+  city: 'Ontario'
+  cardNumber: '4545157625538881'
+  cvv: '123'
+  expiryDate: '12/25'
+  topUp: '50'
+
+  # International Credit Card
+- cardNumber: '4200123456719012' # TC - 30917 International Credit Card
+  cvv: '123'
+  expiryDate: '12/25'
+  # International Billing Address
+  country: 'India'
+  city: 'Pune'
+  postalCode: '411005'
+  provinceFullName: 'Maharashtra'
+
+  # 300$ voucher error Validation
+  phoneNumberVoucher: '416-904-1057' # TC - 35763 exceed 300
+  voucher300: '459872052094' # TC - 35763 exceed 300

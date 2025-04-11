@@ -1,0 +1,11 @@
+#creditcard data
+creditCardData:
+  - cardNumber : '4545157625538881'
+    cvv : '123'
+    expiryDate : '12/25'
+  - cardNumber1: '454515762553881'
+    cvv1: '456'
+    expiryDate1: '12/25'
+  - cardNumber: '4200123456719012'
+    cvv: '123'
+    expiryDate: '12/25'

@@ -1,0 +1,29 @@
+#Authenticated Top up flow Data
+atpData:
+  # Unsaved Credit Card
+- username: 'september2024051258@rci.rogers.com'
+  password: 'Rogers123'
+  phoneNumber: '4162700068'
+  city: 'Toronto'
+  cardNumber: '4545157625538881'
+  cvv: '123'
+  expiryDate: '12/24'
+  topUp: '1'
+  firstName: 'Auto'
+  lastName: 'Test'
+  address: 'A-301 Main St'
+  country: 'Canada'
+  postalCode: 'M3H0C'
+  # Saved Credit Card
+- username: 'september2024051305@rci.rogers.com'
+  password: 'Rogers123'
+  phoneNumber: '4162700077'
+  # International Credit Card
+  cardNumber: '4200123456719012' # TC - 30916 International Credit Card
+  cvv: '123'
+  expiryDate: '12/24'
+  # International Billing Address
+  country: 'India'
+  city: 'Pune'
+  postalCode: '411005'
+  provinceFullName: 'Maharashtra'

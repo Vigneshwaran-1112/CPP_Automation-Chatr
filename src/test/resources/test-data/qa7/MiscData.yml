@@ -1,0 +1,6 @@
+# Store Locator and few common TC parameters
+miscData:
+- postalCode: 'M4B 2J8'
+  city: 'Toronto'
+  store : 'Chatr'
+  storeR : 'Retail'
