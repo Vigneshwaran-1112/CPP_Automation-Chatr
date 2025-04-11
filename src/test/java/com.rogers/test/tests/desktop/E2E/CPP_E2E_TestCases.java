@@ -82,12 +82,15 @@ public class CPP_E2E_TestCases extends BaseTest {
         getOrderConfirmationPage().waitForOrderConfirmationPage();
         getOrderConfirmationPage().validateOrderSummaryDetails(city, provinceFullName);
         System.out.println(phoneNumber+" is Activated");
-    //    String status = getDB().getCTNStatus("416-904-1183".replaceAll("[^0-9]", ""));
+      //  String phoneNumber="416-904-1183";
         String status = getDB().getCTNStatus(phoneNumber.replaceAll("[^0-9]", ""));
+      //  String status = getDB().getCTNStatus("416-904-1183".replaceAll("[^0-9]", ""));
         Assert.assertEquals(status, "AI");
         getChampPage().navigateToRetailerPage();
-        getCarePortalHomePage().searchCTN("416-904-1183");
-        getCarePortalDashBoard().validatePage("416-904-1183");
+        getCarePortalHomePage().searchCTN(phoneNumber);
+        getCarePortalDashBoard().validateDashBoardPage();
+        getCarePortalDashBoard().validatePage(phoneNumber);
+        getCarePortalDashBoard().validateAccountStatusDetails();
         getCarePortalDashBoard().clickOnHistoryReports();
     }
 @Test(groups="E2E")

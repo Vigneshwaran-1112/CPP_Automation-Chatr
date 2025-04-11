@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 
 import java.awt.*;
@@ -40,7 +41,7 @@ public class CP_HomePage extends BasePage {
     WebElement paginationDropdown;
     @FindBy(xpath = "//div[1]/table/tbody/tr/td[7]/button")
     WebElement checkButton;
-    @FindBy(xpath = "//input[@formcontrolname='dateOfBirth']")
+    @FindAll({@FindBy(name = "dateOfBirth"),@FindBy(id = "ds-form-input-id-5"),@FindBy(xpath = "//input[@formcontrolname='dateOfBirth']")})
     WebElement dateOfBirthInput;
     @FindBy(xpath = "(//input[@formcontrolname='postalCode'])[2]")
     WebElement postalCodeInput2;
@@ -223,7 +224,7 @@ public class CP_HomePage extends BasePage {
     WebElement backToDashBoardButton;
     @FindBy(xpath = "//span[contains(text(),'Enable')]")
     WebElement backToDashBoardEnableLink;
-    @FindBy(xpath = "//span[contains(text(),'Submit')]")
+    @FindBy(xpath = "//span[text()=' Submit ']")
     WebElement submitButton;
     @FindBy(xpath = "//span[contains(text(),'Continue')]") //Confirm(//button)[13]")
     WebElement continueButton;
@@ -235,6 +236,7 @@ public class CP_HomePage extends BasePage {
     WebElement unrecognisedVoucherError;
     @FindBy(xpath = "//span[contains(text(),'Submit')]") //(//button)[13]")
     WebElement submitBtn;
+
     @FindBy(xpath = "//span[contains(text(),'charge')]")
     List<WebElement> chargeableTransaction;
     @FindBy(xpath = "//lib-add-ons/div/div[3]/h4")//lib-usage-statistics/div[2]/div[2]/div/h2
@@ -322,23 +324,9 @@ public class CP_HomePage extends BasePage {
         searchButton.click();
         authenticatebtn.click();
         getReusableActions().staticWait(4000);
-        getReusableActions().isElementVisible(dateOfBirth, 20);
-        dateOfBirth.sendKeys("01/01");
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        WebElement element = getDriver().findElement(By.xpath("//p[contains(text(),'Authenticate')]"));
-        element.click();
-        getReusableActions().clickWhenVisible(submitBtn,10);
-
-
-
-
-
-
-
+        getReusableActions().isElementVisible(dateOfBirthInput, 20);
+        dateOfBirthInput.sendKeys("01/01");
+        getReusableActions().clickWhenVisible(submitButton,10);
     }
 
     public void customerSearch(String phoneNumber) {

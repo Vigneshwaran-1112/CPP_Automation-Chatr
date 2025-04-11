@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -355,7 +356,7 @@ public class CP_DashBoard extends BasePage {
     }
 
     public void validatePage(String phoneNumber) {
-        getReusableActions().waitForElementVisibility(autoPay, 20);
+        getReusableActions().waitForElementVisibility(phoneNumberText, 20);
         scrollToMiddleOfElement(phoneNumberText);
         reporterSnapshot(dashboardText, "Dashboard", "", "Common");
         reporterSnapshot(phoneNumberText, phoneNumber.replace("-",""), phoneNumberText.getText().replace("-",""), "Compare");
@@ -364,7 +365,7 @@ public class CP_DashBoard extends BasePage {
     public void validatePage() {
         getReusableActions().waitForElementVisibility(autoPay, 20);
         reporterSnapshot(autoPay, "https://auto-cpp.chatrwireless.com/care/dashboard", "", "LINK");
-        // reporter.softAssert(getDriver().getCurrentUrl().equals("https://chatr-qa-auto.qa01.eks.rogers.com/care/dashboard"), "Care DashBoard Page Loaded", "Care DashBoard Not Loaded");
+        reporter.softAssert(getDriver().getCurrentUrl().equals("https://chatr-qa-auto.qa01.eks.rogers.com/care/dashboard"), "Care DashBoard Page Loaded", "Care DashBoard Not Loaded");
     }
 
     public void validateAutoPayEnrolledIsExpired() {
@@ -437,7 +438,7 @@ public class CP_DashBoard extends BasePage {
         getReusableActions().javascriptScrollByVisibleElement(dashBoardButton);
         getReusableActions().staticWait(2000);
         //reporterSnapshot(dashBoardButton, "https://chatr-qa-auto.qa01.eks.rogers.com/care/dashboard", "", "LINK");
-        reporterSnapshot(dashBoardButton, "https://auto-cpp.chatrwireless.com/care/dashboard", "", "LINK");
+        reporterSnapshot(dashBoardButton, dashBoardButton.getText(), " Dashboard ", "LINK");
     }
 
     public void flagemailScoll() {
@@ -483,6 +484,18 @@ public class CP_DashBoard extends BasePage {
         reporterSnapshot(accountStatusValue, Status, "", "Gen");
 
     }
+    public void validateAccountStatusDetails() {
+        /*reporter.softAssert(accountStatusText.isDisplayed()
+                && accountDetailsLink.isDisplayed()
+                && (accountStatusValue.getText().equals("Active") || accountStatusValue.getText().equals("Expired"
+        )), "Account Status details are valid", "Account Status details are invalid");*/
+        //getReusableActions().javascriptScrollByVisibleElement(accountStatusText);
+        scrollToMiddleOfElement(accountStatusValue);
+        String status= accountStatusValue.getText();
+        System.out.println(status);
+        Assert.assertEquals(status,"Active");
+
+    }
 
     public void validateAnniversaryDetails() {
         getReusableActions().staticWait(2000);
@@ -522,11 +535,10 @@ public class CP_DashBoard extends BasePage {
 
     public void clickOnHistoryReports() {
         getReusableActions().staticWait(3000);
-        //getReusableActions().javascriptScrollByVisibleElement(historyReports);
-        scrollToMiddleOfElement(historyReports);
-        reporterSnapshot(historyReports,"History Report Link","","Display");
-        getReusableActions().isElementVisible(historyReports);
-        getReusableActions().staticWait(5000);
+        getReusableActions().javascriptScrollByVisibleElement(historyReports);
+        //scrollToMiddleOfElement(historyReports);
+       // reporterSnapshot(historyReports,"History Report Link","","Display");
+     //   getReusableActions().isElementVisible(historyReports);
         historyReports.click();
 
     }
