@@ -37,7 +37,7 @@ public class ExcelUtility {
 
 
 
-    public String getDataFromExcel(String SheetName,int row,int cell) {
+        public String getDataFromExcel(String SheetName,int row,int cell) {
 
           String  CTN=workbook.getSheet(SheetName).getRow(row).getCell(cell).getStringCellValue();
           return CTN;

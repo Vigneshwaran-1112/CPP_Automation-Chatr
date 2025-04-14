@@ -5,9 +5,15 @@ import com.rogers.data.handlers.JavaUtility;
 import com.rogers.data.handlers.TestDataHandler;
 import com.rogers.pages.BasePage;
 import com.rogers.test.base.BaseTest;
+import io.restassured.response.Response;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
+import java.util.Map;
+
+import static com.rogers.data.handlers.RTRMSubscriberStatusService.getSubsriberStatus;
 
 public class CPP_E2E_TestCases extends BaseTest {
 
@@ -40,7 +46,7 @@ public class CPP_E2E_TestCases extends BaseTest {
     }
 
     @Test(groups = {"E2E"})
-    public void nac_With_CreditCard_pSim_SS() {
+    public void nac_With_CreditCard_pSim_SS() throws Exception {
 
         String province = TestDataHandler.nacData.getNacData().get(0).get("province");
         String city = TestDataHandler.nacData.getNacData().get(0).get("city");
@@ -55,17 +61,23 @@ public class CPP_E2E_TestCases extends BaseTest {
         // TestDataHandler.nacData.getNacData().get(0).get("email");
         String dateOfBirth = TestDataHandler.nacData.getNacData().get(0).get("dateOfBirth");
 //String altPhoneNumber = TestDataHandler.nacData.getNacData().get(0).get("altPhoneNumber");
-        String simSerialNumber = getDB().getSIMSerialNumber();
+       // String simSerialNumber = getDB().getSIMSerialNumber();
 
         // Change index value for selection of phone numbers
         int index = 3;
+    /*    Map<String, String> testData=getPlanPage().getNACDataValues();
+        String plan= testData.get("plan");
+        System.out.println("the plan value is :" +plan);
+        String email= testData.get("email");
+        System.out.println("the email value is :" +email);*/
        // getHeaderComponent().changeLanguage("French");
-        getHeaderComponent().clickActivate();
+     /*   getHeaderComponent().clickActivate();
         getPlanPage().waitForPlanPageLoad();
         getPlanPage().selectCity(province, city);
         getPlanPage().selectPlanTab(planTab);
         String plan= getPlanPage().getNACData("plan");
-        getPlanPage().selectPlan(String.valueOf(plan));
+        System.out.println("the plan value is :" +plan);
+        getPlanPage().selectPlan(plan);
         getPlanPage().clickOnContinue();
         getSimPage().waitForSimPageLoad();
         getSimPage().chooseSim("psim");
@@ -74,6 +86,7 @@ public class CPP_E2E_TestCases extends BaseTest {
         String phoneNumber = getSimPage().getPhoneNumber(index);
         getSimPage().waitForSimPageLoad();
         String email=getSimPage().getNACData("emaildata");
+        System.out.println("the email value is :" +plan);
         getSimPage().setProfileDetails(firstName, lastName, email, dateOfBirth);
         getSimPage().setAddress(city);
         getSimPage().clickOnContinue();
@@ -99,7 +112,11 @@ public class CPP_E2E_TestCases extends BaseTest {
         getCarePortalDashBoard().validatePage(phoneNumber);
         getCarePortalDashBoard().validateDashBoardPage();
         getCarePortalDashBoard().validateAccountStatusDetails();
-        getCarePortalDashBoard().updateNACDataIntoExcel(phoneNumber);
+        getCarePortalDashBoard().updateNACDataIntoExcel(phoneNumber);*/
+
+        Response r = getSubsriberStatus("4163191073");
+String CTNStatusinRTRM= r.body().path("subscribers[0].subscriber.currentState");
+System.out.println("The CTN status is " +CTNStatusinRTRM);
 
     }
 @Test(groups="E2E")

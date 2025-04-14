@@ -4,6 +4,11 @@ import com.rogers.data.handlers.ExcelUtility;
 import com.rogers.data.handlers.JavaUtility;
 import com.rogers.test.listeners.report.ScreenCapture;
 import com.rogers.test.listeners.report.TestManager;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -20,9 +25,12 @@ import utils.DigiAutoCustomException;
 import utils.Reporter;
 import utils.ReusableActions;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static com.rogers.data.handlers.TestDataHandler.filePath;
 
@@ -506,7 +514,7 @@ public class BasePage {
         getReusableActions().staticWait(2000);
     }
 
-    public String getNACData(String columnname ) {
+    public String getNACData(String rowname) {
         boolean dataFound = false;
         String excelPath = System.getProperty("user.dir") + filePath.replace("env", System.getProperty("Environment")+"/testData.xlsx");
         excelUtility = new ExcelUtility(excelPath);
@@ -514,10 +522,10 @@ public class BasePage {
         try {
             int rowCount = excelUtility.getRowCount("NACdatainput");
             for (int i = 1; i <= rowCount; i++) {
-                String cellEmailData = excelUtility.getCellData("NACdatainput", columnname, i);
+                String cellEmailData = excelUtility.getCellData("NACdatainput",rowname,i);
                 Thread.sleep(2000);
-                if (cellEmailData != null) {
-                    nacData = excelUtility.getCellData("NACdatainput", columnname, i);
+                if (cellEmailData != null && cellEmailData.equals(rowname)) {
+                    nacData = excelUtility.getCellData("NACdatainput",rowname,i);
                     System.out.println("the plan selected is :" +nacData);
                     Thread.sleep(2000);
                     dataFound = true;
@@ -555,6 +563,28 @@ public class BasePage {
 
 
 
+    }
+
+    public Map<String, String> getNACDataValues() throws IOException {
+
+        boolean dataFound = false;
+        String excelPath = System.getProperty("user.dir") + filePath.replace("env", System.getProperty("Environment")+"/testData.xlsx");
+        Workbook workbook = new XSSFWorkbook(excelPath);
+        Sheet sheet = workbook.getSheet("NACdatainput");
+        Map<String, String> data = new HashMap<>();
+        for (int i = 0; i <= sheet.getLastRowNum(); i++) {
+            Row row = sheet.getRow(i);
+            if (row == null) continue;
+
+            Cell keyCell = row.getCell(0);
+            Cell valueCell = row.getCell(1);
+            if (keyCell != null && valueCell != null) {
+                String key = keyCell.toString().trim().toLowerCase();
+                String value = valueCell.toString().trim();
+                data.put(key, value);
+            }
+        }
+        return data;
     }
 
     public void updateNACDataIntoExcel(String phonenumber) {

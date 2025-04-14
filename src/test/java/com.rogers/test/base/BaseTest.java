@@ -3,6 +3,7 @@ package com.rogers.test.base;
 
 import com.rogers.data.handlers.ExcelUtility;
 import com.rogers.data.handlers.JavaUtility;
+import com.rogers.data.handlers.RTRMSubscriberStatusService;
 import com.rogers.data.handlers.TestDataHandler;
 import com.rogers.pages.*;
 import com.rogers.test.commonflows.VerifyInENS;
@@ -71,6 +72,7 @@ public class BaseTest {
 	protected static final ThreadLocal<PPCPage> PPCPageThreadLocal = new ThreadLocal<>();
 	protected static final ThreadLocal<AutoPayEnrollPage> AutoPayEnrollPageThreadLocal = new ThreadLocal<>();
 	protected static final ThreadLocal<BasePage> BasePageThreadLocal = new ThreadLocal<>();
+	protected static HashMap<Long, RTRMSubscriberStatusService>rtrmSubscriberStatusService = new HashMap<>();
 
 	ExcelUtility excelUtility;
 	JavaUtility javaUtility;
@@ -237,6 +239,7 @@ public class BaseTest {
 		ENSNotificationViewPageThreadLocal.set(new ENSNotificationViewPage(getDriver()));
 		PPCPageThreadLocal.set(new PPCPage(getDriver()));
 		AutoPayEnrollPageThreadLocal.set(new AutoPayEnrollPage(getDriver()));
+
 	}
 
 	public static WebDriver getDriver() {
