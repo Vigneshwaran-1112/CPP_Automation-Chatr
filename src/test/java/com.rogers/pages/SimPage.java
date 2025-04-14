@@ -321,6 +321,7 @@ public class SimPage extends BasePage {
         //reporter.reportLogWithScreenshot("Profile details are populated");
         reporterSnapshot(firstNameInput,"Profile Details","","NULL");
     }
+
     public void setProfileDetails(String firstName, String lastName, String email, String dateOfBirth) {
         getReusableActions().isElementVisible(firstNameInput, 10);
         getReusableActions().javascriptScrollByVisibleElement(firstNameInput);

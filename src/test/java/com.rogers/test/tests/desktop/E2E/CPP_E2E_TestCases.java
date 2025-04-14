@@ -44,7 +44,7 @@ public class CPP_E2E_TestCases extends BaseTest {
 
         String province = TestDataHandler.nacData.getNacData().get(0).get("province");
         String city = TestDataHandler.nacData.getNacData().get(0).get("city");
-        String plan = TestDataHandler.nacData.getNacData().get(0).get("planValue");
+       // String plan = TestDataHandler.nacData.getNacData().get(0).get("planValue");
         String planTab = TestDataHandler.nacData.getNacData().get(0).get("planTab");
         String creditCard = TestDataHandler.nacData.getNacData().get(0).get("cardNumber");
         String cvv = TestDataHandler.nacData.getNacData().get(0).get("cvv");
@@ -52,9 +52,9 @@ public class CPP_E2E_TestCases extends BaseTest {
         String provinceFullName = TestDataHandler.nacData.getNacData().get(0).get("provinceFullName");
         String firstName = TestDataHandler.nacData.getNacData().get(0).get("firstName");
         String lastName = TestDataHandler.nacData.getNacData().get(0).get("lastName");
-        String email = TestDataHandler.nacData.getNacData().get(0).get("email");
+        // TestDataHandler.nacData.getNacData().get(0).get("email");
         String dateOfBirth = TestDataHandler.nacData.getNacData().get(0).get("dateOfBirth");
-        String altPhoneNumber = TestDataHandler.nacData.getNacData().get(0).get("altPhoneNumber");
+//String altPhoneNumber = TestDataHandler.nacData.getNacData().get(0).get("altPhoneNumber");
         String simSerialNumber = getDB().getSIMSerialNumber();
 
         // Change index value for selection of phone numbers
@@ -64,7 +64,8 @@ public class CPP_E2E_TestCases extends BaseTest {
         getPlanPage().waitForPlanPageLoad();
         getPlanPage().selectCity(province, city);
         getPlanPage().selectPlanTab(planTab);
-        getPlanPage().selectPlan(plan);
+        String plan= getPlanPage().getNACData("plan");
+        getPlanPage().selectPlan(String.valueOf(plan));
         getPlanPage().clickOnContinue();
         getSimPage().waitForSimPageLoad();
         getSimPage().chooseSim("psim");
@@ -72,7 +73,8 @@ public class CPP_E2E_TestCases extends BaseTest {
         getSimPage().selectPhoneNumber(index);
         String phoneNumber = getSimPage().getPhoneNumber(index);
         getSimPage().waitForSimPageLoad();
-        getSimPage().setProfileDetails(firstName, lastName, email, dateOfBirth, altPhoneNumber);
+        String email=getSimPage().getNACData("emaildata");
+        getSimPage().setProfileDetails(firstName, lastName, email, dateOfBirth);
         getSimPage().setAddress(city);
         getSimPage().clickOnContinue();
         getPaymentPage().waitForPaymentPageLoad();
@@ -82,7 +84,7 @@ public class CPP_E2E_TestCases extends BaseTest {
         getPaymentPage().clickOnSaveCCCheckBox();
         getPaymentPage().clickOnContinue();
         getReviewOrderPage().waitForReviewOrderPageLoad();
-        getReviewOrderPage().validateSummaryDetails(plan, phoneNumber, firstName + " " + lastName, dateOfBirth, email);
+        getReviewOrderPage().validateSummaryDetails(String.valueOf(plan), phoneNumber, firstName + " " + lastName, dateOfBirth, email);
         getReviewOrderPage().clickOnPaymentTermsAndConditions();
         getReviewOrderPage().clickOnSubmit();
         getOrderConfirmationPage().waitForOrderConfirmationPage();
@@ -97,6 +99,7 @@ public class CPP_E2E_TestCases extends BaseTest {
         getCarePortalDashBoard().validatePage(phoneNumber);
         getCarePortalDashBoard().validateDashBoardPage();
         getCarePortalDashBoard().validateAccountStatusDetails();
+        getCarePortalDashBoard().updateNACDataIntoExcel(phoneNumber);
 
     }
 @Test(groups="E2E")

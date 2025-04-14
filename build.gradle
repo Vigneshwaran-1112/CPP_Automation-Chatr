@@ -24,6 +24,7 @@ repositories {
 }
 ext {
     suites = System.getProperty("suites")
+    log4jVersion = '2.20.0'
 }
 
 task printbuilddirectory {
@@ -41,6 +42,9 @@ dependencies {
     implementation 'poi:poi-contrib-2.5.1-final:20040804'
     implementation group: 'org.apache-extras.beanshell', name: 'bsh',version: '2.0b6'
     implementation group: 'org.apache.commons', name: 'commons-collections4', version: '4.0'
+    implementation platform("org.apache.logging.log4j:log4j-bom:$log4jVersion")
+    implementation "org.apache.logging.log4j:log4j-api"
+    implementation "org.apache.logging.log4j:log4j-core"
 }
 
 //def getTunnelName() {
@@ -229,5 +233,5 @@ task sourceJar(type: Jar) {
 //}
 
 wrapper{
-    gradleVersion = "8.5"
+    gradleVersion = "8.10"
 }
