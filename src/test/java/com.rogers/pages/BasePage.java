@@ -450,12 +450,21 @@ public class BasePage {
     }
     public void setNacInDataSheet(String phoneNumber ,String status) {
         String sheetName = "NAC_DataCreation";
-       // String excelPath = System.getProperty("user.dir") + filePath.replace("env", System.getProperty("Environment")+"/testData.xlsx");
-        String excelPath = "./src/test/resources/test-data/qa7/testData.xlsx";
+        String excelPath = System.getProperty("user.dir") + filePath.replace("env", System.getProperty("Environment")+"/testData.xlsx");
+       // String excelPath = "./src/test/resources/test-data/qa7/testData.xlsx";
         excelUtility = new ExcelUtility(excelPath);
         int i = excelUtility.getRowCount(sheetName)+1;
         excelUtility.setCellData(sheetName, "CTN", i, phoneNumber.replaceAll("-",""));
         excelUtility.setCellData(sheetName, "STATUS", i, status);
+    }
+    public String getDataFromExcel() {
+        String sheetName = "NAC_Data";
+         String excelPath = System.getProperty("user.dir") + filePath.replace("env", System.getProperty("Environment")+"/testData.xlsx");
+        //String excelPath = "./src/test/resources/test-data/qa7/testData.xlsx";
+        excelUtility = new ExcelUtility(excelPath);
+        String data= excelUtility.getDataFromExcel(sheetName,0,0);
+        return data;
+
     }
     public void reporterSnapshotWithFullPage(WebElement objValue, String expectedValue, String actualValue, String options) {
         String actualValueTemp = "";

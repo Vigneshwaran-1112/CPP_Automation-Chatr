@@ -305,6 +305,8 @@ public class CP_HomePage extends BasePage {
     WebElement authenticatebtn;
     @FindBy(xpath="//span[contains(text(),'Date of birth MM/DD')]")
     WebElement dateOfBirth;
+    @FindAll({@FindBy(xpath ="//a[@title='Start NAC flow']"),@FindBy(xpath = "//span[contains(text(),'activation')]")})
+    WebElement nacActivate;
 
     public CP_HomePage(WebDriver driver) {
         super(driver);
@@ -314,8 +316,16 @@ public class CP_HomePage extends BasePage {
         getDriver().get(TestDataHandler.landingPageData.getCarePortalLandingPage());
         getReusableActions().isElementVisible(phoneNumberInput, 20);
 
-
     }
+    public void activateNac(){
+        getReusableActions().isElementVisible(nacActivate, 20);
+        reporterSnapshot(nacActivate,"New activation","","COMMON");
+        nacActivate.click();
+    }
+    public void waitForCareHomePageLoad(){
+        getReusableActions().isElementVisible(phoneNumberInput, 20);
+    }
+
 
     public void searchCTN(String phoneNumber) {
         phoneNumberInput.click();

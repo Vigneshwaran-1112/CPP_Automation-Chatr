@@ -1,6 +1,7 @@
 package com.rogers.pages;
 
 import com.rogers.data.handlers.TestDataHandler;
+import oracle.security.crypto.cert.X509;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -25,12 +26,12 @@ public class CP_DashBoard extends BasePage {
     WebElement autoPay;
     @FindBy(xpath = "//div/lib-auto-pay/div/div[1]")
     WebElement enrollStatus;
-    @FindBy(xpath = "//div/lib-auto-pay/div/div[4]/a")
+    @FindBy(xpath = "//div/lib-auto-pay/div/div[3]/a/span/span/span")
     WebElement enrollButton;
     @FindBy(xpath = "//div/lib-auto-pay/div/div[2]/p[2]")
     WebElement enrollDate;
     @FindBy(xpath = "//div/lib-auto-pay/div/div[3]/a")
-    WebElement enrollButton2;
+    WebElement enrollButton2;//
     @FindBy(xpath = "//div/lib-auto-pay/div/div[4]")
     WebElement autoPayText;
     @FindBy(xpath = "//div/lib-plan-details/div/div/div[2]/ds-picture")
@@ -350,6 +351,19 @@ public class CP_DashBoard extends BasePage {
     WebElement orderSummary;
     @FindBy(xpath = "//*[contains(text(),'Customer search')]")
     WebElement newCustomersearch;
+    @FindBy(xpath = "//div/lib-auto-pay/div/div[2]/div/span[2]")
+    WebElement autopayNextAnniversarydate;
+    @FindAll({@FindBy(xpath = "//ds-modal-container"),@FindBy(id = "ds-modal-container-9")})
+    WebElement unenrollpopup;
+    @FindBy(xpath = "//ds-modal/div/p")
+    WebElement unenrollValidation;
+    @FindBy(xpath = "//span[text()='Unenroll']")
+    WebElement unenrollButton;
+    @FindBy(xpath = "//span[contains(text(),'enrolled')]")
+    WebElement stayEnrolledButton;
+
+
+
 
     public CP_DashBoard(WebDriver driver) {
         super(driver);
@@ -358,7 +372,7 @@ public class CP_DashBoard extends BasePage {
     public void validatePage(String phoneNumber) {
         getReusableActions().waitForElementVisibility(phoneNumberText, 20);
         scrollToMiddleOfElement(phoneNumberText);
-        reporterSnapshot(dashboardText, "Dashboard", "", "Common");
+        reporterSnapshot(dashboardText, "Customer dashboard", "", "Common");
         reporterSnapshot(phoneNumberText, phoneNumber.replace("-",""), phoneNumberText.getText().replace("-",""), "Compare");
     }
 
@@ -366,6 +380,33 @@ public class CP_DashBoard extends BasePage {
         getReusableActions().waitForElementVisibility(autoPay, 20);
         reporterSnapshot(autoPay, "https://auto-cpp.chatrwireless.com/care/dashboard", "", "LINK");
         reporter.softAssert(getDriver().getCurrentUrl().equals("https://chatr-qa-auto.qa01.eks.rogers.com/care/dashboard"), "Care DashBoard Page Loaded", "Care DashBoard Not Loaded");
+    }
+    public void enableAutoPay(String phoneNumber){
+        getReusableActions().javascriptScrollByVisibleElement(autoPay);
+        String enrollText = enrollStatus.getText();
+        reporterSnapshot(enrollStatus, "NOT ENROLLED", "", "common");
+        reporterSnapshot(enrollButton, "IS ENABLED", "", "ENABLE");
+        if(enrollButton.getText().equalsIgnoreCase("ENROLL")){
+            enrollButton.click();
+        }
+    }
+    public void enableAutoPay(){
+        getReusableActions().javascriptScrollByVisibleElement(autoPay);
+        String enrollText = enrollStatus.getText();
+        reporterSnapshot(enrollStatus, "NOT ENROLLED", "", "common");
+        reporterSnapshot(enrollButton, "IS ENABLED", "", "ENABLE");//2
+        if(enrollButton.getText().equalsIgnoreCase("ENROLL")){
+            enrollButton.click();
+        }
+    }
+    public void unEnrollAutoPay(){
+        getReusableActions().javascriptScrollByVisibleElement(autoPay);
+        String enrollText = enrollStatus.getText();
+        reporterSnapshot(enrollStatus, "ENROLLED", "", "common");
+        reporterSnapshot(enrollButton, "IS ENABLED", "", "ENABLE");//2
+        if(enrollButton.getText().equalsIgnoreCase("UNENROLL")){
+            enrollButton.click();
+        }
     }
 
     public void validateAutoPayEnrolledIsExpired() {
@@ -392,11 +433,24 @@ public class CP_DashBoard extends BasePage {
         String enrollText = enrollStatus.getText();
         reporterSnapshot(enrollStatus, "NOT ENROLLED", "", "common");
         //reporter.softAssert(enrollText.equals("NOT ENROLLED"), "Status message is as expected", "Status message is not as expected");
-        //reporterSnapshot(enrollButton2, "IS ENABLED", "", "ENABLE");
+        reporterSnapshot(enrollButton2, "IS ENABLED", "", "ENABLE");
         //reporter.softAssert(enrollButton2.isEnabled(), "Enroll button is Enabled", "Enroll button is disabled");
         //reporterSnapshot(autoPayText, "Note: Changes to auto-pay may take up to 24 hrs.", "", "GEN");
         //reporter.softAssert(autoPayText.getText().equals("Note: Changes to auto-pay may take up to 24 hrs."), "AutoPay text is as Expected", "AutoPay text is not as Expected");
     }
+    public void validateAutoPayStatus(){
+        getReusableActions().javascriptScrollByVisibleElement(autoPay);
+        String enrollText = enrollStatus.getText();
+        if (enrollStatus.getText().equalsIgnoreCase("NOT ENROLLED")) {
+            reporterSnapshot(enrollStatus, "NOT ENROLLED", "", "common");
+        }else if (enrollStatus.getText().equalsIgnoreCase("ENROLLED")) {
+            reporterSnapshot(enrollStatus, "ENROLLED", "", "common");
+            reporterSnapshot(autopayNextAnniversarydate, autopayNextAnniversarydate.getText(), "", "common");
+            System.out.println(autopayNextAnniversarydate.getText());
+        }
+
+    }
+
 
 
     public void validateBannerContainsMobilicityName() {
@@ -438,7 +492,7 @@ public class CP_DashBoard extends BasePage {
         getReusableActions().javascriptScrollByVisibleElement(dashBoardButton);
         getReusableActions().staticWait(2000);
         //reporterSnapshot(dashBoardButton, "https://chatr-qa-auto.qa01.eks.rogers.com/care/dashboard", "", "LINK");
-        reporterSnapshot(dashBoardButton, dashBoardButton.getText(), " Dashboard ", "LINK");
+        reporterSnapshot(dashBoardButton, dashBoardButton.getText(), "", "Common");
     }
 
     public void flagemailScoll() {
@@ -493,7 +547,7 @@ public class CP_DashBoard extends BasePage {
         scrollToMiddleOfElement(accountStatusValue);
         String status= accountStatusValue.getText();
         System.out.println(status);
-        Assert.assertEquals(status,"Active");
+         Assert.assertEquals(status,"Active");
 
     }
 
@@ -538,7 +592,7 @@ public class CP_DashBoard extends BasePage {
         getReusableActions().javascriptScrollByVisibleElement(historyReports);
         //scrollToMiddleOfElement(historyReports);
        // reporterSnapshot(historyReports,"History Report Link","","Display");
-     //   getReusableActions().isElementVisible(historyReports);
+        getReusableActions().isElementVisible(historyReports);
         historyReports.click();
 
     }

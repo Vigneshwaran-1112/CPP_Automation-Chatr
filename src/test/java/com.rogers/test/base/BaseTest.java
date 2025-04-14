@@ -69,10 +69,11 @@ public class BaseTest {
 	protected static final ThreadLocal<ENSNotificationViewPage> ENSNotificationViewPageThreadLocal = new ThreadLocal<>();
 	protected static final ThreadLocal<VerifyInENS> VerifyInENSThreadLocal = new ThreadLocal<>();
 	protected static final ThreadLocal<PPCPage> PPCPageThreadLocal = new ThreadLocal<>();
-//	protected static final ThreadLocal<BasePage> BasePageThreadLocal = new ThreadLocal<>();
+	protected static final ThreadLocal<AutoPayEnrollPage> AutoPayEnrollPageThreadLocal = new ThreadLocal<>();
+	protected static final ThreadLocal<BasePage> BasePageThreadLocal = new ThreadLocal<>();
 
 	ExcelUtility excelUtility;
-
+	JavaUtility javaUtility;
 	public BaseTest() {
 		browserDrivers = new BrowserDrivers();
 	}
@@ -164,8 +165,8 @@ public class BaseTest {
 		return LandingPageThreadLocal.get();
 	}
 
-	protected static EnrollAutoPayPage getAutoPay() {
-		return EnrollAutoPayPageThreadLocal.get();
+	protected static AutoPayEnrollPage getAutoPayEnroll() {
+		return AutoPayEnrollPageThreadLocal.get();
 	}
 
 	protected static ChampPage getChampPage() {
@@ -179,9 +180,9 @@ public class BaseTest {
 	public static EASPage getEASPage() {
 		return EASPageThreadLocal.get();
 	}
-//	public static BasePage getBasePage() {
-//		return BasePageThreadLocal.get();
-//	}
+	public static BasePage getBasePage() {
+		return BasePageThreadLocal.get();
+	}
 
 	public static ENSHomePage getENSHomePage() {
 		return ENSHomePageThreadLocal.get();
@@ -197,6 +198,13 @@ public class BaseTest {
 
 	protected static PPCPage getPPCPage() {
 		return PPCPageThreadLocal.get();
+	}
+
+	public static AutoPayEnrollPage getautoPayEnrollPage(){
+		return AutoPayEnrollPageThreadLocal.get();
+	}
+	public static EnrollAutoPayPage getAutoPay(){
+		return EnrollAutoPayPageThreadLocal.get();
 	}
 
 	private void init() {
@@ -228,6 +236,7 @@ public class BaseTest {
 		VerifyInENSThreadLocal.set(new VerifyInENS(getDriver()));
 		ENSNotificationViewPageThreadLocal.set(new ENSNotificationViewPage(getDriver()));
 		PPCPageThreadLocal.set(new PPCPage(getDriver()));
+		AutoPayEnrollPageThreadLocal.set(new AutoPayEnrollPage(getDriver()));
 	}
 
 	public static WebDriver getDriver() {
@@ -539,6 +548,14 @@ public class BaseTest {
 		driver.get("https://auto2-cpp.chatrwireless.com/");
 		driver.manage().window().maximize();
 	}*/
+
+	public String getRandom(int number){
+		int random=javaUtility.generateRandomNumber(number);
+		String rNum=Integer.toString(random);
+		return rNum;
+
+	}
+
 }
 
 

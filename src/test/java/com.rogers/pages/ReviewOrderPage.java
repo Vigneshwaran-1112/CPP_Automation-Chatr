@@ -171,7 +171,12 @@ public class ReviewOrderPage extends BasePage {
         //reporter.softAssert(emailValue.getText().equals(email),"Email: " + email + " is valid", "Email is Invalid");
         getReusableActions().staticWait(1000);
         getReusableActions().javascriptScrollByVisibleElement(paymentType);
-        reporterSnapshot(paymentType,"One-time Payment","","Common");
+        if(paymentType.getText().equalsIgnoreCase("One-time Payment")) {
+            reporterSnapshot(paymentType, "One-time Payment", "", "Common");
+        }else {
+            reporterSnapshot(paymentType, "AUTO-PAY", "", "Common");
+        }
+
         //reporter.softAssert(paymentType.getText().equals("Pay once"),"paymentType: " + paymentType.getText() + " is valid", "paymentType is Invalid");
 
         //reporter.softAssert(topUpAmount.getText().equals(topUp),"TopUp Amount:  " + topUp + " is valid", "TopUp Amountis Invalid");

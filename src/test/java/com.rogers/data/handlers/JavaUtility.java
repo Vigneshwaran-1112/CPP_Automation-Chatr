@@ -4,7 +4,7 @@ import com.rogers.test.base.BaseTest;
 
 import java.util.Random;
 
-public class JavaUtility extends BaseTest {
+public class JavaUtility  {
 
     int Ran=0;
     public int generateRandomNumber(int num){

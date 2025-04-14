@@ -10,6 +10,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.Calendar;
+import java.util.Random;
 
 public class ExcelUtility {
     public String path;
@@ -31,6 +32,15 @@ public class ExcelUtility {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+
+
+
+    public String getDataFromExcel(String SheetName,int row,int cell) {
+
+          String  CTN=workbook.getSheet(SheetName).getRow(row).getCell(cell).getStringCellValue();
+          return CTN;
     }
 
     // returns the row count in a sheet
@@ -182,4 +192,5 @@ public class ExcelUtility {
 
         return row.getLastCellNum();
     }
+
 }
