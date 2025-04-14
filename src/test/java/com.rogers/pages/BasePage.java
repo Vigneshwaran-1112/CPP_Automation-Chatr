@@ -514,10 +514,11 @@ public class BasePage {
         try {
             int rowCount = excelUtility.getRowCount("NACdatainput");
             for (int i = 1; i <= rowCount; i++) {
-                String cellEmailData = excelUtility.getCellData("NACdatainput", columnname, i).toString();
+                String cellEmailData = excelUtility.getCellData("NACdatainput", columnname, i);
                 Thread.sleep(2000);
                 if (cellEmailData != null) {
                     nacData = excelUtility.getCellData("NACdatainput", columnname, i);
+                    System.out.println("the plan selected is :" +nacData);
                     Thread.sleep(2000);
                     dataFound = true;
                   break;
