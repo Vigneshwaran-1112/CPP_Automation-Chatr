@@ -27,7 +27,7 @@ out/
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
-
+CPP_Automation-Chatr
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
