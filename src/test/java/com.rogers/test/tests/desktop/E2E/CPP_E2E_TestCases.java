@@ -257,14 +257,19 @@ System.out.println("The CTN status is " +CTNStatusinRTRM);
         Response r = getSubsriberStatus(phoneNumber);
         String CTNStatusinRTRM= r.body().path("subscribers[0].subscriber.currentState");
         System.out.println("The CTN status is " +CTNStatusinRTRM);
+        getChampPage().navigateToRetailerPage();
+        getCarePortalHomePage().searchCTN(phoneNumber);
+        getCarePortalDashBoard().validatePage(phoneNumber);
+        getCarePortalDashBoard().validateDashBoardPage();
+        getCarePortalDashBoard().validateAccountStatusDetails();
 
 
     }
 
     @Test(groups = {"E2E"})
-    public void nacWithAutoPay_Retail(){
+    public void nacWithAutoPay_Retail() throws Exception {
 
-        String province = TestDataHandler.nacData.getNacData().get(0).get("province");
+        /*String province = TestDataHandler.nacData.getNacData().get(0).get("province");
         String city = TestDataHandler.nacData.getNacData().get(0).get("city");
         String plan = TestDataHandler.nacData.getNacData().get(0).get("planValue");
         String planTab = TestDataHandler.nacData.getNacData().get(0).get("planTab");
@@ -276,6 +281,21 @@ System.out.println("The CTN status is " +CTNStatusinRTRM);
         String lastName = TestDataHandler.nacData.getNacData().get(0).get("lastName");
         String email = TestDataHandler.nacData.getNacData().get(0).get("email");
         String dateOfBirth = TestDataHandler.nacData.getNacData().get(0).get("dateOfBirth");
+        String simSerialNumber = getDB().getSIMSerialNumber();*/
+
+
+        String firstName=getEASPage().getNACData("NAC_Data",3,3);
+        String lastName=getEASPage().getNACData("NAC_Data",3,4);
+        String email=getEASPage().getNACData("NAC_Data",3,2);
+        String plan=getEASPage().getNACData("NAC_Data",3,1);
+        String planTab=getEASPage().getNACData("NAC_Data",3,0);
+        String dateOfBirth=getEASPage().getNACData("NAC_Data",3,5);
+        String province=getEASPage().getNACData("NAC_Data",3,6);
+        String provinceFullName=getEASPage().getNACData("NAC_Data",3,7);
+        String city=getEASPage().getNACData("NAC_Data",3,8);
+        String creditCard = TestDataHandler.nacData.getNacData().get(0).get("cardNumber");
+        String cvv = TestDataHandler.nacData.getNacData().get(0).get("cvv");
+        String expiryDate = TestDataHandler.nacData.getNacData().get(0).get("expiryDate");
         String simSerialNumber = getDB().getSIMSerialNumber();
 
         int index=3;
@@ -314,6 +334,10 @@ System.out.println("The CTN status is " +CTNStatusinRTRM);
         String status=getDB().getCTNStatus(phoneNumber.replaceAll("[^0-9]", ""));
         System.out.println(status);
         Assert.assertEquals(status, "AI");
+        getEASPage().setNacInDataSheet(phoneNumber,"Active");
+        Response r = getSubsriberStatus(phoneNumber);
+        String CTNStatusinRTRM= r.body().path("subscribers[0].subscriber.currentState");
+        System.out.println("The CTN status is " +CTNStatusinRTRM);
         getChampPage().navigateToRetailerPage();
         getCarePortalHomePage().searchCTN(phoneNumber);
         getCarePortalDashBoard().validatePage(phoneNumber);
