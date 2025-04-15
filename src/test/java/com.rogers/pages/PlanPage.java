@@ -181,16 +181,13 @@ public class PlanPage extends BasePage {
         String locator = "//label[@for='%s']";
         locator = String.format(locator, province);
         getDriver().findElement(By.xpath(locator)).click();
-        getReusableActions().staticWait(1000);
         reporterSnapshot(selectCity, province, "", "NULL");
         //reporter.reportLogWithScreenshot("provience is select");
         // Select the city
         getReusableActions().isElementVisible(cityDropdown, 10);
         getReusableActions().clickWhenReady(cityDropdown);
         //getReusableActions().selectWhenReadyByVisibleText(cityDropdown, city);
-        getReusableActions().staticWait(2000);
         getReusableActions().clickWhenReady(cityDropdown);
-        getReusableActions().staticWait(1000);
         cityDropdown.sendKeys(Keys.TAB);
         getReusableActions().staticWait(1000);
         reporterSnapshot(selectCity, city, "", "NULL");

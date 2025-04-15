@@ -121,19 +121,19 @@ public class OrderConfirmationPage extends BasePage {
         SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
         String formattedDate = formatter.format(date);
         String location = city + ", " + provinceFullName;
-        getReusableActions().staticWait(2000);
+    //    getReusableActions().staticWait(2000);
         getReusableActions().javascriptScrollByVisibleElement(simNumber);
         getReusableActions().staticWait(2000);
         getReusableActions().isElementVisible(orderDate);
         getReusableActions().scrollToElement(orderDate);
         reporterSnapshot(orderDate,formattedDate,"","Gen");
-        getReusableActions().staticWait(1000);
+ //       getReusableActions().staticWait(1000);
         getReusableActions().javascriptScrollByVisibleElement(paymentMethod);
         reporterSnapshot(paymentMethod,"CREDIT CARD, VISA DEBIT, OR DEBIT MASTERCARD,CHATR TOP-UP CARD","","COMPARE1");
-        getReusableActions().staticWait(1000);
+     //   getReusableActions().staticWait(1000);
         getReusableActions().javascriptScrollByVisibleElement(orderLocation);
         reporterSnapshot(orderLocation,location,"","Gen");
-        getReusableActions().staticWait(1000);
+      //  getReusableActions().staticWait(1000);
         getReusableActions().javascriptScrollByVisibleElement(orderSummary);
         reporterSnapshot(orderNumber,"Order Number","","Gettext");
     }

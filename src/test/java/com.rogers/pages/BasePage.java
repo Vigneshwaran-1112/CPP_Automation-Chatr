@@ -466,11 +466,11 @@ public class BasePage {
     }
 
     public void setNacInDataSheet(String phoneNumber, String status) {
-        String sheetName = "NAC_DataCreation";
+        String sheetName = "NAC_Data";
         String excelPath = System.getProperty("user.dir") + filePath.replace("env", System.getProperty("Environment") + "/testData.xlsx");
         // String excelPath = "./src/test/resources/test-data/qa7/testData.xlsx";
         excelUtility = new ExcelUtility(excelPath);
-        int i = excelUtility.getRowCount(sheetName) + 1;
+        int i = excelUtility.getRowCount(sheetName);
         excelUtility.setCellData(sheetName, "CTN", i, phoneNumber.replaceAll("-", ""));
         excelUtility.setCellData(sheetName, "STATUS", i, status);
     }
@@ -550,6 +550,29 @@ public class BasePage {
             int rowCount = excelUtility.getRowCount("NACdatainput");
             for (int i = 1; i <= rowCount; i++) {
                 String cellEmailData = excelUtility.getDataFromExcel("NACdatainput",1,1);
+                Thread.sleep(2000);
+                if (cellEmailData != null) {
+                    nacData=cellEmailData;
+                    break;
+                }
+
+            }  return nacData;
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+
+
+    }
+    public String getNACData(String SheetName,int row, int cell) {
+        boolean dataFound = false;
+        String excelPath = System.getProperty("user.dir") + filePath.replace("env", System.getProperty("Environment")+"/testData.xlsx");
+        excelUtility = new ExcelUtility(excelPath);
+        String nacData = "";
+        try {
+            int rowCount = excelUtility.getRowCount(SheetName);
+            for (int i = 1; i <= rowCount; i++) {
+                String cellEmailData = excelUtility.getDataFromExcel(SheetName,row,cell);
                 Thread.sleep(2000);
                 if (cellEmailData != null) {
                     nacData=cellEmailData;

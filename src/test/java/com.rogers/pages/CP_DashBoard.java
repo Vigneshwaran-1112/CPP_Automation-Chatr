@@ -375,6 +375,10 @@ public class CP_DashBoard extends BasePage {
         reporterSnapshot(dashboardText, "Customer dashboard", "", "Common");
         reporterSnapshot(phoneNumberText, phoneNumber.replace("-",""), phoneNumberText.getText().replace("-",""), "Compare");
     }
+    public void waitForPageLoad(){
+        getReusableActions().waitForElementVisibility(dashboardText,10);
+        getReusableActions().staticWait(2000);
+    }
 
     public void validatePage() {
         getReusableActions().waitForElementVisibility(autoPay, 20);

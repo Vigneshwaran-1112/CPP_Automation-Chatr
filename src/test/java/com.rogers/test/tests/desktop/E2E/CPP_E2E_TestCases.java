@@ -20,6 +20,8 @@ public class CPP_E2E_TestCases extends BaseTest {
 
     @Test(groups = {"E2E"})
     public void guest_Topup_Flow() {
+
+
         String phoneNumber = TestDataHandler.gtpData.getGtpData().get(0).get("phoneNumber");
         String firstName = TestDataHandler.gtpData.getGtpData().get(0).get("firstName");
         String lastName = TestDataHandler.gtpData.getGtpData().get(0).get("lastName");
@@ -180,10 +182,13 @@ System.out.println("The CTN status is " +CTNStatusinRTRM);
     }
 
     @Test(groups={"E2E"})
-    public void nacWithCreditCard_Retail(){
+    public void nacWithCreditCard_Retail() throws Exception {
 
 
-        String province = TestDataHandler.nacData.getNacData().get(0).get("province");
+
+
+
+       /* String province = TestDataHandler.nacData.getNacData().get(0).get("province");
         String city = TestDataHandler.nacData.getNacData().get(0).get("city");
         String plan = TestDataHandler.nacData.getNacData().get(0).get("planValue");
         String planTab = TestDataHandler.nacData.getNacData().get(0).get("planTab");
@@ -194,13 +199,28 @@ System.out.println("The CTN status is " +CTNStatusinRTRM);
         String firstName = TestDataHandler.nacData.getNacData().get(0).get("firstName");
         String lastName = TestDataHandler.nacData.getNacData().get(0).get("lastName");
         String email = TestDataHandler.nacData.getNacData().get(0).get("email");
-        String dateOfBirth = TestDataHandler.nacData.getNacData().get(0).get("dateOfBirth");
+        String dateOfBirth = TestDataHandler.nacData.getNacData().get(0).get("dateOfBirth");*/
+
+        String firstName=getEASPage().getNACData("NAC_Data",2,3);
+        String lastName=getEASPage().getNACData("NAC_Data",2,4);
+        String email=getEASPage().getNACData("NAC_Data",2,2);
+        String plan=getEASPage().getNACData("NAC_Data",2,1);
+        String planTab=getEASPage().getNACData("NAC_Data",2,0);
+        String dateOfBirth=getEASPage().getNACData("NAC_Data",2,5);
+        String province=getEASPage().getNACData("NAC_Data",2,6);
+        String provinceFullName=getEASPage().getNACData("NAC_Data",2,7);
+        String city=getEASPage().getNACData("NAC_Data",2,8);
+        String creditCard = TestDataHandler.nacData.getNacData().get(0).get("cardNumber");
+        String cvv = TestDataHandler.nacData.getNacData().get(0).get("cvv");
+        String expiryDate = TestDataHandler.nacData.getNacData().get(0).get("expiryDate");
+
+
         String simSerialNumber = getDB().getSIMSerialNumber();
 
         int index=3;
 
         getChampPage().navigateToRetailerPage();
-        /*getHeaderComponent().changeLanguage("French");*/
+       /* getHeaderComponent().changeLanguage("French");*/
         getCarePortalHomePage().activateNac();
         getPlanPage().waitForPlanPageLoad();
         getPlanPage().selectCity(province, city);
@@ -232,6 +252,13 @@ System.out.println("The CTN status is " +CTNStatusinRTRM);
         String status=getDB().getCTNStatus(phoneNumber.replaceAll("[^0-9]", ""));
         System.out.println(status);
         Assert.assertEquals(status, "AI");
+        getEASPage().setNacInDataSheet(phoneNumber,"Active");
+
+        Response r = getSubsriberStatus(phoneNumber);
+        String CTNStatusinRTRM= r.body().path("subscribers[0].subscriber.currentState");
+        System.out.println("The CTN status is " +CTNStatusinRTRM);
+
+
     }
 
     @Test(groups = {"E2E"})
@@ -287,36 +314,90 @@ System.out.println("The CTN status is " +CTNStatusinRTRM);
         String status=getDB().getCTNStatus(phoneNumber.replaceAll("[^0-9]", ""));
         System.out.println(status);
         Assert.assertEquals(status, "AI");
+        getChampPage().navigateToRetailerPage();
+        getCarePortalHomePage().searchCTN(phoneNumber);
+        getCarePortalDashBoard().validatePage(phoneNumber);
+        getCarePortalDashBoard().validateDashBoardPage();
+        getCarePortalDashBoard().validateAccountStatusDetails();
 
 
     }
 
     @Test
-    public void enableAutopay(){
+    public void enableAutopayInRetail(){
 
-
-
-
+        String phoneNumber= getEASPage().getNACData("NAC_Data",1,11);
         getChampPage().navigateToRetailerPage();
         getCarePortalHomePage().waitForCareHomePageLoad();
-        getCarePortalHomePage().searchCTN("4169041183");
-        getCarePortalDashBoard().validatePage("4169041183");
+        getCarePortalHomePage().searchCTN(phoneNumber);
+        getCarePortalDashBoard().validatePage(phoneNumber);
         getCarePortalDashBoard().validateAutoPayStatus();
         getCarePortalDashBoard().enableAutoPay();
-       // getPaymentPage().setCreditCardDetails();
         getautoPayEnrollPage().enrollAutopayWithoutTopup();
         getautoPayEnrollPage().enrollAutoPayAction();
+        getCarePortalDashBoard().waitForPageLoad();
+        getCarePortalDashBoard().validateAutoPayStatus();
+
     }
 
     @Test
-    public void getData(){
+    public void disableAutopayRetail(){
+
+        // String phoneNumber = TestDataHandler.nacData.getNacData().get(0).get("CTN");
+        String phoneNumber=getEASPage().getNACData("NAC_Data",1,11);
+        System.out.println(phoneNumber);
+        getChampPage().navigateToRetailerPage();
+        getCarePortalHomePage().waitForCareHomePageLoad();
+        getCarePortalHomePage().searchCTN(phoneNumber);
+        getCarePortalDashBoard().validatePage(phoneNumber);
+        getCarePortalDashBoard().validateAutoPayStatus();
+        getCarePortalDashBoard().unEnrollAutoPay();
+        getCarePortalDashBoard().waitForPageLoad();
+        getCarePortalDashBoard().validateAutoPayStatus();
 
 
-        String CTN =getBasePage().getDataFromExcel();
 
-        System.out.println(CTN);
     }
 
+
+    @Test
+    public void enableAutoPayInSS(){
+
+
+      String CTN=  getSimPage().getNACData("NAC_Data",1,11);
+
+
+
+    }
+
+    @Test
+    public void easRegistration(){
+
+        String phoneNumber=getEASPage().getNACData("NAC_Data",1,11);
+        String  email=getEASPage().getNACData("NAC_Data",3,2);
+        String password=getEASPage().getNACData("NAC_Data",1,13);
+        getHeaderComponent().clickSignIn();
+        getEASPage().clickRegister();
+        getEASPage().enterPhoneNumber(phoneNumber);
+        String phoneNumberOtp = getEASPage().getPhoneNumberOtp(phoneNumber);
+        System.out.println(phoneNumberOtp);
+        getEASPage().enterCode(phoneNumberOtp);
+        getEASPage().clickContinue();
+        getEASPage().enterEmail(email);
+        getEASPage().clickContinue();
+        String mailOTP = getSignInPage().getmailOTP(email);
+        System.out.println(mailOTP);
+        getEASPage().enterEmailVerificationCode(mailOTP);
+        getEASPage().clickContinue();
+        getEASPage().setPassword(password);
+        getEASPage().validateSuccessRegisterMessage(email);
+        getEASPage().setEasidPwd(phoneNumber,email,password);
+
+
+
+
+
+    }
 //    public void getDatas(){
 //        String CTN=getChampPage().getDataFromExcel();
 //        System.out.println(CTN);

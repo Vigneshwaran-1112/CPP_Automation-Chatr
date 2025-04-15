@@ -41,7 +41,7 @@ public class HeaderComponent extends BasePage {
     WebElement submitButton;
     @FindBy(xpath = "//a[text()=' My chatr ']")
     WebElement myChatr;
-    @FindBy(xpath = "(//a[@aria-labe='Sign into my chatr'])[3]") //a[contains(text(),'My chatr')]") //(//a[@title='Sign into my chatr'])[1]") //a[contains(@aria-label,'Sign in now')]")
+    @FindAll({@FindBy(xpath = "(//span[text()='Sign-in'])[1]"),@FindBy(xpath = "(//a[@aria-labe='Sign into my chatr'])[3]")}) //a[contains(text(),'My chatr')]") //(//a[@title='Sign into my chatr'])[1]") //a[contains(@aria-label,'Sign in now')]")
     WebElement signInCTA;
     @FindBy(xpath = "//button[@aria-label='Plan details tab ']")
     WebElement currentPlan;
@@ -151,8 +151,12 @@ public class HeaderComponent extends BasePage {
         plans.click();
     }
 
+
+//    public void clickSignIn(){
+//
+//    }
     public void clickSignIn() {
-        getReusableActions().staticWait(3000);
+        getReusableActions().staticWait(2000);
         getReusableActions().waitForElementTobeClickable(signInCTA,10);
         if(System.getProperty("Browser").equals("sauceandroidchrome")){
             reporterSnapshot(signInCTA, "Chatr Home Page", "", "NULL");
@@ -177,7 +181,6 @@ public class HeaderComponent extends BasePage {
 //            getReusableActions().staticWait(4000);
             if (getDriver().findElements(By.xpath("//span[contains(text(),'Submit')]")).size() > 0 ) {
                 getDriver().findElement(By.xpath("//input[@type='text']")).click();
-               // getDriver().findElement(By.xpath("//input[@type='text']")).sendKeys("4163197179"); //QA-AUTO 2
                 getDriver().findElement(By.xpath("//input[@type='text']")).sendKeys("4168172628"); //QA-AUTO
                 getDriver().findElement(By.xpath("//span[contains(text(),'Submit')]")).click();
                 getReusableActions().staticWait(5000);

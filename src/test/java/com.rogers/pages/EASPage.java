@@ -172,7 +172,7 @@ public class EASPage extends BasePage {
     }
 
     public void clickRegister() {
-        getReusableActions().staticWait(2500);
+        getReusableActions().staticWait(1500);
         getReusableActions().javascriptScrollByVisibleElement(registerButton);
         getReusableActions().staticWait(500);
         reporterSnapshot(registerButton, "SIGN IN Page", "", "NULL");
@@ -183,6 +183,11 @@ public class EASPage extends BasePage {
         reporterSnapshot(registerButton, "Register", "", "NULL");
     }
 
+    public void waitForPageLoad(){
+        getReusableActions().staticWait(2000);
+        getReusableActions().waitForElementVisibility(registerButton,10);
+
+    }
     public void validateInvalidPhoneNumber(String phoneNumber) {
         phoneNumberField.clear();
         phoneNumberField.click();

@@ -102,6 +102,8 @@ public class AutoPayEnrollPage extends BasePage{
     public void enrollAutoPayAction(){
         reviewEnroll();
         confirmEnroll();
+        getReusableActions().staticWait(1000);
+        backToDashboardButton.click();
     }
 
 
