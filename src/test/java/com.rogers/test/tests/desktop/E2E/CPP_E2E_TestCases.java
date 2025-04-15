@@ -180,10 +180,10 @@ System.out.println("The CTN status is " +CTNStatusinRTRM);
     }
 
     @Test(groups={"E2E"})
-    public void nacWithCreditCard_Retail(){
+    public void nacWithCreditCard_Retail() throws Exception {
 
 
-        String province = TestDataHandler.nacData.getNacData().get(0).get("province");
+       /* String province = TestDataHandler.nacData.getNacData().get(0).get("province");
         String city = TestDataHandler.nacData.getNacData().get(0).get("city");
         String plan = TestDataHandler.nacData.getNacData().get(0).get("planValue");
         String planTab = TestDataHandler.nacData.getNacData().get(0).get("planTab");
@@ -194,7 +194,21 @@ System.out.println("The CTN status is " +CTNStatusinRTRM);
         String firstName = TestDataHandler.nacData.getNacData().get(0).get("firstName");
         String lastName = TestDataHandler.nacData.getNacData().get(0).get("lastName");
         String email = TestDataHandler.nacData.getNacData().get(0).get("email");
-        String dateOfBirth = TestDataHandler.nacData.getNacData().get(0).get("dateOfBirth");
+        String dateOfBirth = TestDataHandler.nacData.getNacData().get(0).get("dateOfBirth");*/
+
+
+        String province = getEASPage().getNACData("NAC_Data",1,6);
+        String city = getEASPage().getNACData("NAC_Data",1,7);
+        String plan = getEASPage().getNACData("NAC_Data",1,1);
+        String planTab = getEASPage().getNACData("NAC_Data",1,0);
+        String creditCard = TestDataHandler.nacData.getNacData().get(0).get("cardNumber");
+        String cvv = TestDataHandler.nacData.getNacData().get(0).get("cvv");
+        String expiryDate = TestDataHandler.nacData.getNacData().get(0).get("expiryDate");
+        String provinceFullName = getEASPage().getNACData("NAC_Data",1,8);
+        String firstName =getEASPage().getNACData("NAC_Data",1,2);
+        String lastName = getEASPage().getNACData("NAC_Data",1,3);
+        String email = getEASPage().getNACData("NAC_Data",1,4);
+        String dateOfBirth = getEASPage().getNACData("NAC_Data",1,5);
         String simSerialNumber = getDB().getSIMSerialNumber();
 
         int index=3;
@@ -232,6 +246,10 @@ System.out.println("The CTN status is " +CTNStatusinRTRM);
         String status=getDB().getCTNStatus(phoneNumber.replaceAll("[^0-9]", ""));
         System.out.println(status);
         Assert.assertEquals(status, "AI");
+        getEASPage().setNacInDataSheet("NAC_Data",phoneNumber,"Active");
+        Response r = getSubsriberStatus(phoneNumber);
+        String CTNStatusinRTRM= r.body().path("subscribers[0].subscriber.currentState");
+        System.out.println("The CTN status is " +CTNStatusinRTRM);
     }
 
     @Test(groups = {"E2E"})

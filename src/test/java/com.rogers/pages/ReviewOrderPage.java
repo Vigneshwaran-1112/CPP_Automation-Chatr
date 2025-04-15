@@ -152,7 +152,6 @@ public class ReviewOrderPage extends BasePage {
         reporterSnapshot(planValue,plan,"","Gen");
         //reporterSnapshot(planValue,plan);
         //reporter.softAssert(planValue.getText().equals(plan),"Plan Value: " + plan + " is valid","Invalid Plan value");
-        getReusableActions().staticWait(1000);
         getReusableActions().javascriptScrollByVisibleElement(phoneValue);
         reporterSnapshot(phoneValue,phoneNumber,"","Gen");
         System.out.println("Created ctn -- "+phoneNumber.replaceAll("-",""));
